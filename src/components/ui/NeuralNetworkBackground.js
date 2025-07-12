@@ -16,6 +16,8 @@ const NeuralNetworkBackground = () => {
     let animationPhase = 'forward'; // 'forward' or 'backward'
     let lastPhaseChange = 0;
     let phaseInterval = 6000; // ms between phase changes
+    let forwardPassCounter = 0; // Counter for forward passes
+    let targetForwardPasses = Math.floor(Math.random() * 3) + 1; // Random number between 1-3
     
     // Canvas setup
     const resizeCanvas = () => {
@@ -63,30 +65,58 @@ const NeuralNetworkBackground = () => {
         }
       }
       
-      // Create selective connections (not fully connected)
+      // Create connections for the network
       for (let layer = 0; layer < numLayers - 1; layer++) {
         const sourceNodes = nodes.filter(node => node.layer === layer);
         const targetNodes = nodes.filter(node => node.layer === layer + 1);
         
-        for (const source of sourceNodes) {
-          // Connect to 2-3 random nodes in the next layer
-          const numConnections = Math.floor(Math.random() * 2) + 2;
-          const shuffledTargets = [...targetNodes].sort(() => Math.random() - 0.5);
-          
-          for (let i = 0; i < Math.min(numConnections, targetNodes.length); i++) {
-            const target = shuffledTargets[i];
+        // Special connection handling for the penultimate layer to output layer
+        // to ensure all output nodes have connections
+        if (layer === numLayers - 2) {
+          // For each target node in output layer, ensure it has at least one connection
+          for (const target of targetNodes) {
+            // Select 2-3 random source nodes from the penultimate layer
+            const numConnections = Math.floor(Math.random() * 2) + 2;
+            const shuffledSources = [...sourceNodes].sort(() => Math.random() - 0.5);
             
-            // Create connection with random opacity (reduced glow)
-            const connection = {
-              source: source,
-              target: target,
-              opacity: 0.05 + Math.random() * 0.15, // Lower opacity for less glow
-              active: false,
-              width: 0.2 + Math.random() * 0.6 // Slightly thinner lines
-            };
+            for (let i = 0; i < Math.min(numConnections, sourceNodes.length); i++) {
+              const source = shuffledSources[i];
+              
+              // Create connection to this output node
+              const connection = {
+                source: source,
+                target: target,
+                opacity: 0.05 + Math.random() * 0.15,
+                active: false,
+                width: 0.2 + Math.random() * 0.6
+              };
+              
+              connections.push(connection);
+              source.connections.push(connection);
+            }
+          }
+        } else {
+          // Standard connection logic for other layers
+          for (const source of sourceNodes) {
+            // Connect to 2-3 random nodes in the next layer
+            const numConnections = Math.floor(Math.random() * 2) + 2;
+            const shuffledTargets = [...targetNodes].sort(() => Math.random() - 0.5);
             
-            connections.push(connection);
-            source.connections.push(connection);
+            for (let i = 0; i < Math.min(numConnections, targetNodes.length); i++) {
+              const target = shuffledTargets[i];
+              
+              // Create connection with random opacity (reduced glow)
+              const connection = {
+                source: source,
+                target: target,
+                opacity: 0.05 + Math.random() * 0.15, // Lower opacity for less glow
+                active: false,
+                width: 0.2 + Math.random() * 0.6 // Slightly thinner lines
+              };
+              
+              connections.push(connection);
+              source.connections.push(connection);
+            }
           }
         }
       }
@@ -101,13 +131,11 @@ const NeuralNetworkBackground = () => {
       // Start from the input layer
       const inputNodes = nodes.filter(node => node.layer === 0);
       
-      // Stagger signal creation slightly
-      inputNodes.forEach((node, index) => {
-        setTimeout(() => {
-          node.connections.forEach(conn => {
-            createSignal(conn, 'forward');
-          });
-        }, index * 200);
+      // Create all signals at once without staggering
+      inputNodes.forEach(node => {
+        node.connections.forEach(conn => {
+          createSignal(conn, 'forward');
+        });
       });
       
       lastPhaseChange = Date.now();
@@ -128,21 +156,9 @@ const NeuralNetworkBackground = () => {
         outputNodes.includes(c.target)
       );
       
-      // Group by target node for staggered effect
-      const grouped = {};
+      // Create all backward signals at once without staggering
       outputConnections.forEach(conn => {
-        const targetId = outputNodes.indexOf(conn.target);
-        if (!grouped[targetId]) grouped[targetId] = [];
-        grouped[targetId].push(conn);
-      });
-      
-      // Start signals from each output node with delays
-      Object.keys(grouped).forEach((nodeIndex, i) => {
-        setTimeout(() => {
-          grouped[nodeIndex].forEach(conn => {
-            createSignal(conn, 'backward');
-          });
-        }, i * 200);
+        createSignal(conn, 'backward');
       });
       
       lastPhaseChange = Date.now();
@@ -156,12 +172,13 @@ const NeuralNetworkBackground = () => {
       
       connection.active = true;
       
-      // Create signal with duller gradient colors
+      // Create signal with duller gradient colors and consistent speed
       const signal = {
         connection: connection,
         direction: direction,
         progress: direction === 'forward' ? 0 : 1,
-        speed: 0.003 + Math.random() * 0.002,
+        layer: direction === 'forward' ? connection.source.layer : connection.target.layer,
+        speed: 0.004, // Fixed speed for all signals
         size: 1 + Math.random() * 1.5,
         tail: [],
         tailLength: 40 + Math.floor(Math.random() * 30), // Long tails
@@ -182,35 +199,52 @@ const NeuralNetworkBackground = () => {
         const targetNode = connection.target;
         targetNode.pulse = 1; // Visual pulse effect
         
-        const nextConnections = targetNode.connections;
+        // Check if we've already processed this layer to avoid duplicates
+        const nextLayer = targetNode.layer + 1;
+        const layerAlreadyProcessing = signals.some(s => 
+          s.direction === 'forward' && 
+          s.connection.source.layer === nextLayer
+        );
         
-        // Send signals along some of these connections
-        if (nextConnections.length > 0) {
-          nextConnections.forEach((conn, i) => {
-            // Stagger the creation of new signals
-            setTimeout(() => {
+        // Only create new signals if we haven't already started processing this layer
+        if (!layerAlreadyProcessing) {
+          const nextConnections = connections.filter(conn => 
+            conn.source.layer === targetNode.layer && 
+            conn.target.layer === nextLayer
+          );
+          
+          // Send signals along all connections at once
+          if (nextConnections.length > 0) {
+            nextConnections.forEach(conn => {
               createSignal(conn, 'forward');
-            }, i * 50 + Math.random() * 100);
-          });
+            });
+          }
         }
       } else {
         // Backward pass - get connections coming into the source node
         const sourceNode = connection.source;
         sourceNode.pulse = 1; // Visual pulse effect
         
-        // Find connections going to this source node
-        const prevConnections = connections.filter(c => 
-          c.target === sourceNode && c.source.layer < sourceNode.layer
+        // Check if we've already processed this layer to avoid duplicates
+        const prevLayer = sourceNode.layer - 1;
+        const layerAlreadyProcessing = signals.some(s => 
+          s.direction === 'backward' && 
+          s.connection.target.layer === prevLayer
         );
         
-        // Send signals along some of these connections
-        if (prevConnections.length > 0) {
-          prevConnections.forEach((conn, i) => {
-            // Stagger the creation of new signals
-            setTimeout(() => {
+        // Only create new signals if we haven't already started processing this layer
+        if (!layerAlreadyProcessing) {
+          const prevConnections = connections.filter(conn => 
+            conn.target.layer === sourceNode.layer && 
+            conn.source.layer === prevLayer
+          );
+          
+          // Send signals along all connections at once
+          if (prevConnections.length > 0) {
+            prevConnections.forEach(conn => {
               createSignal(conn, 'backward');
-            }, i * 50 + Math.random() * 100);
-          });
+            });
+          }
         }
       }
     }
@@ -224,11 +258,24 @@ const NeuralNetworkBackground = () => {
       const now = Date.now();
       if (now - lastPhaseChange > phaseInterval && signals.length === 0) {
         // Only toggle phases when we've been running for a while
-        // This prevents backward pass from starting too early
         if (now - lastPhaseChange > phaseInterval * 1.5) {
           if (animationPhase === 'forward') {
-            startBackwardPass();
+            // Increment forward pass counter
+            forwardPassCounter++;
+            
+            // Check if we've done enough forward passes
+            if (forwardPassCounter >= targetForwardPasses) {
+              // Reset counter and do backward pass
+              forwardPassCounter = 0;
+              // Set a new random target for next cycle
+              targetForwardPasses = Math.floor(Math.random() * 3) + 1;
+              startBackwardPass();
+            } else {
+              // Do another forward pass
+              startForwardPass();
+            }
           } else {
+            // After backward pass, always do a forward pass
             startForwardPass();
           }
         } else if (animationPhase === 'forward') {
@@ -255,13 +302,28 @@ const NeuralNetworkBackground = () => {
         ctx.stroke();
       }
       
+      // Group signals by direction and layer for synchronized movement
+      const layerSignals = {};
+      if (signals.length > 0) {
+        signals.forEach(signal => {
+          const key = `${signal.direction}_${signal.layer}`;
+          if (!layerSignals[key]) layerSignals[key] = [];
+          layerSignals[key].push(signal);
+        });
+      }
+
       // Update and draw signals
       const remainingSignals = [];
       
       for (const signal of signals) {
-        // Update signal position
+        // Synchronized layer-by-layer movement
+        // All signals in the same layer and direction move together
         if (signal.direction === 'forward') {
-          signal.progress += signal.speed;
+          // Use the same progress value for all signals in this layer+direction
+          const layerKey = `forward_${signal.layer}`;
+          const layerProgress = 0.004; // Fixed increment for synchronized movement
+          
+          signal.progress += layerProgress;
           if (signal.progress >= 1) {
             signal.connection.active = false;
             propagateSignal(signal);
@@ -269,7 +331,10 @@ const NeuralNetworkBackground = () => {
           }
         } else {
           // Backward pass moves from 1 to 0
-          signal.progress -= signal.speed;
+          const layerKey = `backward_${signal.layer}`;
+          const layerProgress = 0.004; // Fixed decrement for synchronized movement
+          
+          signal.progress -= layerProgress;
           if (signal.progress <= 0) {
             signal.connection.active = false;
             propagateSignal(signal);
@@ -382,6 +447,8 @@ const NeuralNetworkBackground = () => {
     animationPhase = 'forward'; // Ensure we're in forward phase
     signals = []; // Ensure no signals exist initially
     lastPhaseChange = Date.now(); // Reset timer
+    forwardPassCounter = 0; // Reset forward pass counter
+    targetForwardPasses = Math.floor(Math.random() * 3) + 1; // Set random target (1-3)
     
     // Initial forward pass with delay
     setTimeout(startForwardPass, 1000);
