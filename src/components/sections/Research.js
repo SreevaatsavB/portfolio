@@ -12,7 +12,7 @@ const Research = () => {
     {
       id: 1,
       title: "GIV-CXR: Densely Grounded, Visually Interpretable, Chest X-Ray Question Answering Dataset",
-      authors: "Sreevaatsav Bavana, Adit Rushil Potta, Krishi Raju Vysyaraju, Sai Amrit Patnaik, Nidhi Goyal",
+      authors: "Sreevaatsav Bavana, Adit Rushil Potta, Sai Amrit Patnaik, Nidhi Goyal",
       conference: "Will be submitted to WACV 2026",
       year: "2025",
       status: "In progress",
