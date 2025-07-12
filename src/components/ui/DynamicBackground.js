@@ -36,8 +36,8 @@ const DynamicBackground = () => {
   } else {
     // For dark mode on desktop, currently only using NeuralNetworkBackground
     // To use FlowBackground, uncomment the line below and comment out the NeuralNetworkBackground line
-    return <FlowBackground />;
-    // return <NeuralNetworkBackground />;
+    // return <FlowBackground />;
+    return <NeuralNetworkBackground />;
   }
 };
 
