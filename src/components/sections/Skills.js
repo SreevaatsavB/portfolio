@@ -36,7 +36,7 @@ const Skills = () => {
       category: "AI engineering & Infrastructure",
       skills: [
         { name: "MCP", level: 6 },
-        { name: "Pydantic AI", level: 5 },
+        { name: "Langchain", level: 5 },
         { name: "VLLM", level: 4 },
         { name: "MLFlow", level: 4 },
         { name: "SLRUM", level: 4 },
