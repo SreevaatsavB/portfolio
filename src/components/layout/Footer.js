@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="text-xl font-bold">Sreevaatsav B</h3>
-            <p>Associate Data Scientist</p>
+            <p>Data Scientist</p>
           </div>
           <SocialIcons />
         </div>

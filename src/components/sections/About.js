@@ -166,7 +166,7 @@ const About = () => {
             <div className="mb-8">
               <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>Hey, I'm Vaatsav!</h3>
               <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-4`}>
-                I'm an Associate Data Scientist with a passion for solving complex problems using AI and machine learning. My journey in tech began with a curiosity about how data can transform the way we understand the world around us. When I'm not training models or diving into code, you might find me at the gym or painting some landscapes.
+                I'm a Data Scientist with a passion for solving complex problems using AI and machine learning. My journey in tech began with a curiosity about how data can transform the way we understand the world around us. When I'm not training models or diving into code, you might find me at the gym or painting some landscapes.
               </p>
               <p className={darkMode ? 'text-gray-300' : 'text-gray-700'}>
                 I'm always eager to collaborate on projects that push the boundaries of what's possible with technology while making a positive impact on people's lives. Let's connect and create something amazing together!
