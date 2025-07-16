@@ -23,7 +23,7 @@ const About = () => {
                     <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path>
                   </svg>
                 </div>
-                <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>Associate Data Scientist</span>
+                <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>Data Scientist</span>
               </div>
               
               <div className="flex items-center">

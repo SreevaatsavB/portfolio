@@ -30,7 +30,7 @@ const Experience = () => {
       companyUrl: 'https://awone.ai',
       logo: `${process.env.PUBLIC_URL}/assets/logos/awone-ai-logo.svg`,
       period: 'Jun 2024 - June 2025',
-      description: 'Worked as a full-time Associate Data Scientist at Awone AI in Hyderabad, India.',
+      description: 'Worked as a full-time Data Scientist at Awone AI in Hyderabad, India.',
       skills: ['LLMs', 'VLMs', 'Machine Learning'],
       details: [
         'Developed an end-to-end interruptible voice chat application with open-source components with MCP client-server for a user database.',
