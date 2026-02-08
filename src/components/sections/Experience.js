@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import SectionTitle from '../common/SectionTitle';
-import TimelineItem from '../ui/TimelineItem';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Experience = () => {
@@ -21,7 +20,8 @@ const Experience = () => {
         'Built production-grade LLM workflow systems to automate prior authorization, reducing medical nurse review time by approximately 30-40% with around 80-85% accuracy; currently improving the system with a HITL workflow.',
         'Working on applied research methodologies to enhance automated medical coding.',
         'Developed an ML system for appeal denial prediction directly from customer data sources, with a corresponding ETL pipeline.'
-      ]
+      ],
+      companyTrack: 'awone-penguin'
     },
     {
       id: 2,
@@ -36,7 +36,8 @@ const Experience = () => {
         'Developed an end-to-end interruptible voice chat application with open-source components with MCP client-server for a user database.',
         'Improved the inference speed of production LLMs by 15% by quantization and developing speculative decoding n-gram head.',
         'Built and deployed a BERT-based NER model for healthcare PII redaction using a custom loss function.'
-      ]
+      ],
+      companyTrack: 'awone-penguin'
     },
     {
       id: 3,
@@ -51,7 +52,8 @@ const Experience = () => {
         'Developed a strong foundation in LLMs and transformers by coding state-of-the-art models like Llama-2 and Mistral from scratch, focusing on architectures, attention mechanisms, and optimizations.',
         'Experimented with several LLM optimization and quantization techniques, helping to reduce latency on development platform.',
         'Finetuned task-specific SLMs for medical-insurance related tasks.'
-      ]
+      ],
+      companyTrack: 'awone-penguin'
     },
     {
       id: 4,
@@ -65,7 +67,8 @@ const Experience = () => {
       details: [
         'Collaborated with a four-person team to conduct a thorough research survey on video summarization techniques.',
         'Co-authored a survey paper published in the ACMMM Workshop 2023.'
-      ]
+      ],
+      companyTrack: null
     }
   ];
   
@@ -79,8 +82,12 @@ const Experience = () => {
         
         {/* Timeline items */}
         <div className="space-y-20">
-          {experienceData.map((experience, index) => (
-            <div key={experience.id} className="relative">
+          {experienceData.map((experience) => {
+            const isAwonePenguinTrack = experience.companyTrack === 'awone-penguin';
+            const isPenguinRole = experience.company === 'Penguin AI';
+
+            return (
+              <div key={experience.id} className="relative">
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 z-10">
                 <div className={`w-8 h-8 rounded-full ${darkMode ? 'bg-sky-500' : 'bg-sky-600'} flex items-center justify-center border-4 ${darkMode ? 'border-gray-800' : 'border-white'}`}>
@@ -101,7 +108,15 @@ const Experience = () => {
                 </div>
                 
                 {/* Right side - Content */}
-                <div className={`mt-3 md:mt-0 ${darkMode ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-md`}>
+                <div className={`mt-3 md:mt-0 ${darkMode ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-md border ${
+                  isAwonePenguinTrack
+                    ? darkMode
+                      ? 'border-sky-400/60'
+                      : 'border-sky-300'
+                    : darkMode
+                      ? 'border-gray-700'
+                      : 'border-gray-200'
+                }`}>
                   <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{experience.role}</h3>
                   <div className="flex flex-col gap-2 mb-2">
                     {experience.logo && (
@@ -127,6 +142,13 @@ const Experience = () => {
                         </div>
                       </div>
                     )}
+                    {isPenguinRole && (
+                      <p className={`text-xs font-medium ${
+                        darkMode ? 'text-sky-300' : 'text-sky-700'
+                      }`}>
+                        Awone AI rebranded as Penguin AI
+                      </p>
+                    )}
                   </div>
                   
                   <div className="mt-4 flex flex-wrap gap-2">
@@ -150,7 +172,8 @@ const Experience = () => {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
