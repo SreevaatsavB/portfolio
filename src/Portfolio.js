@@ -39,10 +39,11 @@ const Portfolio = () => {
           {activeSection === 'about' && (
             <motion.div 
               key="about"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <About />
             </motion.div>
@@ -51,10 +52,11 @@ const Portfolio = () => {
           {activeSection === 'experience' && (
             <motion.div 
               key="experience"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <Experience />
             </motion.div>
@@ -63,10 +65,11 @@ const Portfolio = () => {
           {activeSection === 'education' && (
             <motion.div 
               key="education"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <Education />
             </motion.div>
@@ -75,10 +78,11 @@ const Portfolio = () => {
           {activeSection === 'research' && (
             <motion.div 
               key="research"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <Research />
             </motion.div>
@@ -87,10 +91,11 @@ const Portfolio = () => {
           {activeSection === 'projects' && (
             <motion.div 
               key="projects"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <Projects />
             </motion.div>
@@ -99,10 +104,11 @@ const Portfolio = () => {
           {activeSection === 'skills' && (
             <motion.div 
               key="skills"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.18 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
             >
               <Skills />
             </motion.div>
@@ -111,11 +117,13 @@ const Portfolio = () => {
           {activeSection === 'hobbies' && (
             <motion.div 
               key="hobbies"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              className="stagger-group"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
               transition={{ 
-                duration: 0.2
+                duration: 0.34,
+                ease: [0.22, 1, 0.36, 1]
               }}
             >
               <Hobbies />

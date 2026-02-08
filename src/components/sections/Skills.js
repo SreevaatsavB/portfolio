@@ -60,18 +60,18 @@ const Skills = () => {
   ];
 
   return (
-    <section className="content-section section-tone section-tone-cool">
+    <section className="content-section section-tone section-tone-cool stagger-group">
       <SectionTitle title="Skills" />
       
-      <div className={`surface-card p-6 transition-colors duration-300 relative z-10 ${
+      <div className={`surface-card card-trace stagger-item p-6 transition-colors duration-300 relative z-10 ${
         darkMode ? 'bg-slate-900/90 border-slate-700' : 'bg-white border-slate-200'
       }`}>
         {skillsCategories.map((category, idx) => (
-          <div key={idx} className="mb-8">
-            <h3 className={`text-lg font-bold mb-4 pb-2 border-b ${darkMode ? 'text-slate-100 border-slate-700' : 'text-slate-900 border-slate-200'}`}>
+          <div key={idx} className="mb-8 stagger-group">
+            <h3 className={`text-lg font-bold mb-4 pb-2 border-b stagger-item ${darkMode ? 'text-slate-100 border-slate-700' : 'text-slate-900 border-slate-200'}`}>
               {category.category}
             </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 stagger-group stagger-item">
               {category.skills.map((skill, index) => (
                 <SkillCard key={index} skill={skill} darkMode={darkMode} />
               ))}

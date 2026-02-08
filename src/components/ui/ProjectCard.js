@@ -6,7 +6,7 @@ const ProjectCard = ({ project, index }) => {
 
   return (
     <article
-      className={`surface-card p-6 transition-transform duration-200 hover:-translate-y-0.5 ${
+      className={`surface-card card-trace stagger-item p-6 transition-transform duration-200 hover:-translate-y-0.5 ${
         darkMode ? 'bg-slate-900/90 border-slate-700' : 'bg-white border-slate-200'
       }`}
     >

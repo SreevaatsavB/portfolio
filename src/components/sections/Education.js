@@ -26,11 +26,11 @@ const Education = () => {
   ];
 
   return (
-    <section className="content-section section-tone section-tone-warm">
+    <section className="content-section section-tone section-tone-warm stagger-group">
       <SectionTitle title="Education" />
       
       <SectionContainer>
-        <div className="relative">
+        <div className="relative stagger-item">
           <div className="flex items-start">
             {/* Timeline dot */}
             <div className="mr-4 mt-1">
@@ -90,13 +90,13 @@ const Education = () => {
               </div>
               
               {/* Key Courses */}
-              <div className={`p-4 rounded-lg mt-4 ${darkMode ? 'bg-slate-800' : 'bg-slate-50'}`}>
+              <div className={`p-4 rounded-lg mt-4 card-trace ${darkMode ? 'bg-slate-800' : 'bg-slate-50'}`}>
                 <h4 className={`font-bold mb-4 ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>Relevant Courses</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {keyCourses.map((course, index) => (
                     <div 
                       key={index} 
-                      className={`p-3 rounded border ${darkMode ? 'bg-slate-900 border-slate-700 text-slate-100' : 'bg-white border-slate-200 text-slate-800'} shadow-sm`}
+                      className={`p-3 rounded border card-trace ${darkMode ? 'bg-slate-900 border-slate-700 text-slate-100' : 'bg-white border-slate-200 text-slate-800'} shadow-sm`}
                     >
                       {course}
                     </div>

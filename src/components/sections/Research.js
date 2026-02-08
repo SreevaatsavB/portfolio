@@ -45,15 +45,15 @@ const Research = () => {
   ];
 
   return (
-    <section className="content-section section-tone section-tone-warm">
+    <section className="content-section section-tone section-tone-warm stagger-group">
       <SectionTitle title="Research" />
       
       <SectionContainer>
-        <div className="space-y-8">
+        <div className="space-y-8 stagger-group">
           {publications.map((pub) => (
             <div 
               key={pub.id} 
-              className={`p-6 rounded-lg mb-4 ${
+              className={`p-6 rounded-lg mb-4 card-trace stagger-item ${
                 darkMode 
                   ? 'bg-slate-900 border border-slate-700' 
                   : 'bg-slate-50 border border-slate-200'
@@ -102,7 +102,7 @@ const Research = () => {
           ))}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 stagger-item">
           <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
             Research Interests
           </h3>

@@ -79,11 +79,11 @@ const Projects = () => {
   };
   
   return (
-    <section className="content-section section-tone section-tone-cool">
+    <section className="content-section section-tone section-tone-cool stagger-group">
       <SectionTitle title="Projects" />
       
       {/* Project filters */}
-      <div className="flex justify-center mb-8 overflow-x-auto pb-2">
+      <div className="flex justify-center mb-8 overflow-x-auto pb-2 stagger-item">
         <div className={`inline-flex p-1 rounded-lg border ${
           darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'
         }`}>
@@ -100,7 +100,7 @@ const Projects = () => {
       </div>
       
       {/* Projects grid */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6 stagger-group">
         {filteredProjects.map((project) => (
           <ProjectCard 
             key={project.id} 

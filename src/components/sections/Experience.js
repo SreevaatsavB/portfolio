@@ -73,23 +73,23 @@ const Experience = () => {
   ];
   
   return (
-    <section className="content-section section-tone section-tone-warm">
+    <section className="content-section section-tone section-tone-warm stagger-group">
       <SectionTitle title="Experience" />
       
-      <div className="relative pb-12">
+      <div className="relative pb-12 stagger-item">
         {/* Timeline line */}
         <div className={`absolute left-0 md:left-1/2 h-full w-px transform -translate-x-1/2 ${
           darkMode ? 'bg-slate-600' : 'bg-slate-300'
         }`}></div>
         
         {/* Timeline items */}
-        <div className="space-y-20">
+        <div className="space-y-20 stagger-group">
           {experienceData.map((experience) => {
             const isAwonePenguinTrack = experience.companyTrack === 'awone-penguin';
             const isPenguinRole = experience.company === 'Penguin AI';
 
             return (
-              <div key={experience.id} className="relative">
+              <div key={experience.id} className="relative stagger-item">
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 z-10">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center border-4 ${
@@ -112,7 +112,7 @@ const Experience = () => {
                 </div>
                 
                 {/* Right side - Content */}
-                <div className={`mt-3 md:mt-0 ${darkMode ? 'bg-slate-900/90' : 'bg-white'} p-6 rounded-lg shadow-md border ${
+                <div className={`mt-3 md:mt-0 card-trace ${darkMode ? 'bg-slate-900/90' : 'bg-white'} p-6 rounded-lg shadow-md border ${
                   isAwonePenguinTrack
                     ? darkMode
                       ? 'border-slate-500'

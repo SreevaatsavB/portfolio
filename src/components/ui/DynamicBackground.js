@@ -7,29 +7,55 @@ const DynamicBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       <div
-        className="absolute inset-0 transition-colors duration-300"
+        className="absolute inset-0 transition-colors duration-500"
         style={{
           background: darkMode
-            ? 'radial-gradient(circle at 12% 18%, rgba(121,180,255,0.11), transparent 38%), radial-gradient(circle at 86% 82%, rgba(170,205,255,0.1), transparent 34%), linear-gradient(180deg, #0d1624 0%, #111b2b 50%, #0f1724 100%)'
-            : 'radial-gradient(circle at 10% 20%, rgba(63,111,183,0.14), transparent 36%), radial-gradient(circle at 88% 84%, rgba(123,167,223,0.16), transparent 34%), linear-gradient(180deg, #f4f8ff 0%, #edf4ff 45%, #e6f0ff 100%)',
+            ? 'linear-gradient(180deg, #0c1522 0%, #101a2a 40%, #0f1724 100%)'
+            : 'linear-gradient(180deg, #f5f9ff 0%, #edf4ff 40%, #eaf2ff 100%)',
+        }}
+      />
+
+      <div
+        className="aurora-layer aurora-layer-primary"
+        style={{
+          background: darkMode
+            ? 'radial-gradient(circle at 20% 25%, rgba(104, 168, 246, 0.33), transparent 56%)'
+            : 'radial-gradient(circle at 20% 25%, rgba(130, 185, 245, 0.46), transparent 58%)',
         }}
       />
       <div
-        className={`absolute -top-24 -right-20 h-96 w-96 rounded-full blur-3xl ${
-          darkMode ? 'bg-sky-400/10' : 'bg-blue-300/25'
-        }`}
-      />
-      <div
-        className={`absolute -bottom-24 -left-20 h-80 w-80 rounded-full blur-3xl ${
-          darkMode ? 'bg-blue-200/10' : 'bg-sky-200/28'
-        }`}
-      />
-      <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="aurora-layer aurora-layer-secondary"
         style={{
+          background: darkMode
+            ? 'radial-gradient(circle at 80% 74%, rgba(103, 143, 214, 0.28), transparent 58%)'
+            : 'radial-gradient(circle at 80% 74%, rgba(139, 203, 255, 0.42), transparent 58%)',
+        }}
+      />
+      <div
+        className="aurora-layer aurora-layer-tertiary"
+        style={{
+          background: darkMode
+            ? 'radial-gradient(circle at 52% 40%, rgba(53, 104, 184, 0.22), transparent 54%)'
+            : 'radial-gradient(circle at 52% 40%, rgba(175, 216, 255, 0.34), transparent 56%)',
+        }}
+      />
+
+      <div
+        className="absolute inset-0"
+        style={{
+          opacity: darkMode ? 0.08 : 0.06,
           backgroundImage:
             'linear-gradient(to right, rgba(15,23,42,0.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.35) 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
+          backgroundSize: '34px 34px',
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          opacity: darkMode ? 0.16 : 0.1,
+          backgroundImage:
+            'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.7) 0.5px, transparent 0.8px), radial-gradient(circle at 72% 66%, rgba(255,255,255,0.6) 0.6px, transparent 0.9px)',
+          backgroundSize: '240px 240px',
         }}
       />
     </div>

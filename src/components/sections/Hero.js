@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="py-12 md:py-14 relative z-10">
       <div className="portfolio-main px-4 md:px-6">
-        <div className={`surface-card p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 ${
+        <div className={`surface-card card-trace p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 ${
           darkMode ? 'bg-slate-900/90' : 'bg-white/95'
         }`}>
           {/* Left side with text */}
@@ -34,6 +34,8 @@ const Hero = () => {
           {/* Right side with image */}
           <div className="md:w-2/5 flex justify-center md:justify-end">
             <div className="relative">
+              <div className="hero-halo w-72 h-72 md:w-80 md:h-80 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="hero-halo hero-halo-secondary w-64 h-64 md:w-72 md:h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
               <div className={`w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border ${
                 darkMode ? 'border-slate-700' : 'border-slate-200'
               } shadow-lg`}>

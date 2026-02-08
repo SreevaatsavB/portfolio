@@ -7,13 +7,13 @@ const About = () => {
   const { darkMode } = useTheme();
   
   return (
-    <section className="content-section section-tone section-tone-cool" id="about-section">
+    <section className="content-section section-tone section-tone-cool stagger-group" id="about-section">
       <SectionTitle title="About Me" />
       
-      <div className={`surface-card ${darkMode ? 'bg-slate-900/90 text-slate-100 border-slate-700' : 'bg-white text-slate-900 border-slate-200'} p-8`}>
-        <div className="grid md:grid-cols-7 gap-8">
+      <div className={`surface-card card-trace stagger-item ${darkMode ? 'bg-slate-900/90 text-slate-100 border-slate-700' : 'bg-white text-slate-900 border-slate-200'} p-8`}>
+        <div className="grid md:grid-cols-7 gap-8 stagger-group">
           {/* Left column - Quick Info and more */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 stagger-item">
             <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-6 pb-1 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>Quick Info</h3>
             
             <div className="space-y-6 mb-10">
@@ -153,7 +153,7 @@ const About = () => {
           </div>
           
           {/* Right column - Main content */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 stagger-item">
             {/* Header section */}
             <div className="mb-6">
               <div className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-1`}>Data Scientist</div>

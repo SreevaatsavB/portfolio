@@ -29,7 +29,7 @@ const SkillCard = ({ skill, darkMode }) => {
   };
 
   return (
-    <div className={`rounded-lg p-3 border transition-all duration-200 ${
+    <div className={`rounded-lg p-3 border card-trace stagger-item transition-all duration-200 ${
       darkMode ? 'bg-slate-900 border-slate-700 hover:bg-slate-800/70' : 'bg-white border-slate-200 hover:bg-slate-50'
     }`}>
       <span className={`font-medium block mb-2 ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>{skill.name}</span>
