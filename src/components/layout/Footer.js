@@ -3,20 +3,19 @@ import { useTheme } from '../../context/ThemeContext';
 import SocialIcons from '../ui/SocialIcons';
 
 const Footer = () => {
-  const { darkMode, colors } = useTheme();
+  const { darkMode } = useTheme();
   
   return (
-    <footer className={`${darkMode ? 'bg-gray-900' : 'bg-sky-600'} text-white py-8`}>
-      <div className="container mx-auto px-6">
+    <footer className={`mt-4 border-t py-10 ${
+      darkMode ? 'bg-slate-950/60 border-slate-800' : 'bg-white/70 border-slate-200'
+    }`}>
+      <div className="portfolio-main px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <h3 className="text-xl font-bold">Sreevaatsav B</h3>
-            <p>Data Scientist</p>
+            <h3 className={`text-xl font-bold ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>Sreevaatsav B</h3>
+            <p className={darkMode ? 'text-slate-300' : 'text-slate-600'}>Data Scientist</p>
           </div>
           <SocialIcons />
-        </div>
-        <div className="mt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Sreevaatsav B. All rights reserved.</p>
         </div>
       </div>
     </footer>

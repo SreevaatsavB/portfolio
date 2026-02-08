@@ -45,7 +45,7 @@ const Research = () => {
   ];
 
   return (
-    <section className="mb-12">
+    <section className="content-section section-tone section-tone-warm">
       <SectionTitle title="Research" />
       
       <SectionContainer>
@@ -55,23 +55,23 @@ const Research = () => {
               key={pub.id} 
               className={`p-6 rounded-lg mb-4 ${
                 darkMode 
-                  ? 'bg-gray-800 border border-gray-700' 
-                  : 'bg-gray-50 border border-gray-200'
+                  ? 'bg-slate-900 border border-slate-700' 
+                  : 'bg-slate-50 border border-slate-200'
               }`}
             >
-              <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-sky-800'}`}>
+              <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
                 {pub.title}
               </h3>
               
-              <p className={`mb-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+              <p className={`mb-2 ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
                 {pub.authors}
               </p>
               
-              <p className={`text-sm mb-2 ${darkMode ? 'text-sky-400' : 'text-sky-700'}`}>
+              <p className={`text-sm mb-2 ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
                 {pub.conference}, {pub.year}
                 {pub.status?.toLowerCase() === 'submitted' && (
                   <span
-                    className={`ml-2 px-2 py-1 rounded-full text-xs border ${
+                    className={`ml-2 ui-badge ${
                       darkMode
                         ? 'bg-amber-500/20 text-amber-200 border-amber-400/40'
                         : 'bg-amber-100 text-amber-800 border-amber-300'
@@ -88,7 +88,7 @@ const Research = () => {
                     href={pub.link} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center ${darkMode ? 'text-sky-400' : 'text-sky-600'} hover:underline`}
+                    className={`inline-flex items-center ${darkMode ? 'text-sky-300' : 'text-sky-700'} hover:underline`}
                   >
                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
@@ -103,13 +103,13 @@ const Research = () => {
         </div>
 
         <div className="mt-10">
-          <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-sky-800'}`}>
+          <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
             Research Interests
           </h3>
           
           <ul className="list-disc pl-6 space-y-2">
             {researchInterests.map((interest, index) => (
-              <li key={index} className={darkMode ? 'text-gray-300' : 'text-gray-700'}>
+              <li key={index} className={darkMode ? 'text-slate-300' : 'text-slate-700'}>
                 {interest}
               </li>
             ))}

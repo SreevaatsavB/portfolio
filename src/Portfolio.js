@@ -18,10 +18,11 @@ import Research from './components/sections/Research';
 import Hobbies from './components/sections/Hobbies';
 
 const Portfolio = () => {
+  const { darkMode } = useTheme();
   const [activeSection, setActiveSection] = useState('about');
 
   return (
-    <div className="min-h-screen text-white relative">
+    <div className={`portfolio-shell relative ${darkMode ? 'theme-dark' : 'theme-light'}`}>
       {/* Dynamic background that switches based on theme and section */}
       <DynamicBackground activeSection={activeSection} />
       
@@ -32,7 +33,7 @@ const Portfolio = () => {
       {activeSection !== 'hobbies' && <Hero />}
 
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-12 relative z-10">
+      <main className="portfolio-main px-4 md:px-6 py-10 md:py-12 relative z-10">
         {/* Section visibility is controlled by AnimatePresence for smooth transitions */}
         <AnimatePresence mode="wait">
           {activeSection === 'about' && (
@@ -41,7 +42,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <About />
             </motion.div>
@@ -53,7 +54,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <Experience />
             </motion.div>
@@ -65,7 +66,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <Education />
             </motion.div>
@@ -77,7 +78,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <Research />
             </motion.div>
@@ -89,7 +90,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <Projects />
             </motion.div>
@@ -101,7 +102,7 @@ const Portfolio = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.18 }}
             >
               <Skills />
             </motion.div>
@@ -110,12 +111,11 @@ const Portfolio = () => {
           {activeSection === 'hobbies' && (
             <motion.div 
               key="hobbies"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ 
-                duration: 0.3, 
-                ease: "easeInOut" 
+                duration: 0.2
               }}
             >
               <Hobbies />

@@ -1,52 +1,32 @@
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const MobileMenu = ({ activeSection, handleNavClick }) => {
+  const { darkMode } = useTheme();
+  const sections = ['about', 'experience', 'education', 'research', 'projects', 'skills'];
+
   return (
-    <div className="md:hidden mt-4 pb-4">
+    <div className={`md:hidden mt-4 pb-4 border rounded-xl p-3 ${
+      darkMode ? 'bg-slate-900/90 border-slate-700' : 'bg-white/95 border-slate-200'
+    }`}>
       <nav className="flex flex-col space-y-2">
-        <button 
-          onClick={() => handleNavClick('about')}
-          className={`${activeSection === 'about' ? 'bg-blue-700' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          About
-        </button>
-        <button 
-          onClick={() => handleNavClick('experience')}
-          className={`${activeSection === 'experience' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Experience
-        </button>
-        <button 
-          onClick={() => handleNavClick('education')}
-          className={`${activeSection === 'education' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Education
-        </button>
-        <button 
-          onClick={() => handleNavClick('research')}
-          className={`${activeSection === 'research' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Research
-        </button>
-        <button 
-          onClick={() => handleNavClick('projects')}
-          className={`${activeSection === 'projects' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Projects
-        </button>
-        <button 
-          onClick={() => handleNavClick('skills')}
-          className={`${activeSection === 'skills' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Skills
-        </button>
-        {/* <button 
-          onClick={() => handleNavClick('hobbies')}
-          data-section="creative-mobile"
-          className={`${activeSection === 'hobbies' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
-        >
-          Creative
-        </button> */}
+        {sections.map((section) => (
+          <button
+            key={section}
+            onClick={() => handleNavClick(section)}
+            className={`py-2 px-4 rounded text-left capitalize transition ${
+              activeSection === section
+                ? darkMode
+                  ? 'bg-slate-700 text-slate-100'
+                  : 'bg-slate-900 text-white'
+                : darkMode
+                  ? 'text-slate-300 hover:bg-slate-800'
+                  : 'text-slate-700 hover:bg-slate-100'
+            }`}
+          >
+            {section}
+          </button>
+        ))}
       </nav>
     </div>
   );

@@ -7,10 +7,10 @@ const About = () => {
   const { darkMode } = useTheme();
   
   return (
-    <section className="mb-12" id="about-section">
+    <section className="content-section section-tone section-tone-cool" id="about-section">
       <SectionTitle title="About Me" />
       
-      <div className={`${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'} rounded-lg shadow-md p-8`}>
+      <div className={`surface-card ${darkMode ? 'bg-slate-900/90 text-slate-100 border-slate-700' : 'bg-white text-slate-900 border-slate-200'} p-8`}>
         <div className="grid md:grid-cols-7 gap-8">
           {/* Left column - Quick Info and more */}
           <div className="md:col-span-2">
@@ -61,15 +61,15 @@ const About = () => {
             <div className="space-y-3 mb-10">
               <div className="flex justify-between">
                 <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>English</span>
-                <span className={darkMode ? 'text-gray-400' : 'text-gray-500'} italic>Professional</span>
+                <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'} italic`}>Professional</span>
               </div>
               <div className="flex justify-between">
                 <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>Hindi</span>
-                <span className={darkMode ? 'text-gray-400' : 'text-gray-500'} italic>Native</span>
+                <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'} italic`}>Native</span>
               </div>
               <div className="flex justify-between">
                 <span className={darkMode ? 'text-gray-300' : 'text-gray-700'}>Telugu</span>
-                <span className={darkMode ? 'text-gray-400' : 'text-gray-500'} italic>Native</span>
+                <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'} italic`}>Native</span>
               </div>
             </div>
             

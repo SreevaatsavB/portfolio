@@ -12,7 +12,7 @@ const SocialIcons = ({ className = "" }) => {
         href={SOCIAL_LINKS.linkedin} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className={`text-white hover:text-indigo-200 transition duration-300`}
+        className={`${darkMode ? 'text-slate-300 hover:text-sky-300' : 'text-slate-600 hover:text-sky-700'} transition duration-200`}
         aria-label="LinkedIn"
       >
         <img 
@@ -27,7 +27,7 @@ const SocialIcons = ({ className = "" }) => {
         href={SOCIAL_LINKS.github} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className={`text-white hover:text-indigo-200 transition duration-300`}
+        className={`${darkMode ? 'text-slate-300 hover:text-sky-300' : 'text-slate-600 hover:text-sky-700'} transition duration-200`}
         aria-label="GitHub"
       >
         <img 
@@ -42,7 +42,7 @@ const SocialIcons = ({ className = "" }) => {
         href={SOCIAL_LINKS.googleScholar} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className={`text-white hover:text-indigo-200 transition duration-300`}
+        className={`${darkMode ? 'text-slate-300 hover:text-sky-300' : 'text-slate-600 hover:text-sky-700'} transition duration-200`}
         aria-label="Google Scholar"
       >
         <img 
@@ -57,7 +57,7 @@ const SocialIcons = ({ className = "" }) => {
         href={SOCIAL_LINKS.kaggle} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className={`text-white hover:text-indigo-200 transition duration-300`}
+        className={`${darkMode ? 'text-slate-300 hover:text-sky-300' : 'text-slate-600 hover:text-sky-700'} transition duration-200`}
         aria-label="Kaggle"
       >
         <img 
@@ -72,7 +72,7 @@ const SocialIcons = ({ className = "" }) => {
         href={SOCIAL_LINKS.leetcode} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className={`text-white hover:text-indigo-200 transition duration-300`}
+        className={`${darkMode ? 'text-slate-300 hover:text-sky-300' : 'text-slate-600 hover:text-sky-700'} transition duration-200`}
         aria-label="LeetCode"
       >
         <img 

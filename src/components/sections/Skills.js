@@ -60,13 +60,15 @@ const Skills = () => {
   ];
 
   return (
-    <section className="mb-12">
+    <section className="content-section section-tone section-tone-cool">
       <SectionTitle title="Skills" />
       
-      <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} p-6 rounded-lg shadow-md transition-colors duration-300 relative z-10`}>
+      <div className={`surface-card p-6 transition-colors duration-300 relative z-10 ${
+        darkMode ? 'bg-slate-900/90 border-slate-700' : 'bg-white border-slate-200'
+      }`}>
         {skillsCategories.map((category, idx) => (
           <div key={idx} className="mb-8">
-            <h3 className={`text-lg font-bold mb-4 pb-2 border-b ${darkMode ? 'text-white border-blue-800' : 'text-gray-900 border-blue-200'}`}>
+            <h3 className={`text-lg font-bold mb-4 pb-2 border-b ${darkMode ? 'text-slate-100 border-slate-700' : 'text-slate-900 border-slate-200'}`}>
               {category.category}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">

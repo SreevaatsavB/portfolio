@@ -1,94 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import InteractiveBackground from './InteractiveBackground';
-import FlowBackground from './FlowBackground';
-import NeuralNetworkBackground from './NeuralNetworkBackground';
-import AuroraBackground from './AuroraBackground';
 
-const DynamicBackground = ({ activeSection }) => {
+const DynamicBackground = () => {
   const { darkMode } = useTheme();
-  const [isMobile, setIsMobile] = useState(false);
-  const [darkModeBackground, setDarkModeBackground] = useState('flow'); // Options: 'flow', 'neural'
-  
-  // Check if device is mobile based on screen width
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Standard mobile breakpoint (tailwind's md)
-    };
-    
-    // Initial check
-    checkIfMobile();
-    
-    // Listen for window resize events
-    window.addEventListener('resize', checkIfMobile);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', checkIfMobile);
-  }, []);
- 
-  // Check if we're in the Creative section
-  const isCreativeSection = activeSection === 'hobbies';
-  
-  // Logic for choosing background with smooth transitions:
-  // 1. Creative section: Use AuroraBackground regardless of dark/light mode
-  // 2. Light mode (all devices): InteractiveBackground
-  // 3. Dark mode on mobile: InteractiveBackground
-  // 4. Dark mode on desktop: NeuralNetworkBackground
+
   return (
-    <AnimatePresence mode="wait">
-      {isCreativeSection && (
-        <motion.div 
-          key="aurora"
-          className="absolute inset-0 z-0 overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <AuroraBackground />
-        </motion.div>
-      )}
-      
-      {!isCreativeSection && !darkMode && (
-        <motion.div 
-          key="interactive-light"
-          className="absolute inset-0 z-0 overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <InteractiveBackground />
-        </motion.div>
-      )}
-      
-      {!isCreativeSection && darkMode && isMobile && (
-        <motion.div 
-          key="interactive-dark-mobile"
-          className="absolute inset-0 z-0 overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <InteractiveBackground />
-        </motion.div>
-      )}
-      
-      {!isCreativeSection && darkMode && !isMobile && (
-        <motion.div 
-          key="neural-network"
-          className="absolute inset-0 z-0 overflow-hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        >
-          <NeuralNetworkBackground />
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      <div
+        className="absolute inset-0 transition-colors duration-300"
+        style={{
+          background: darkMode
+            ? 'radial-gradient(circle at 12% 18%, rgba(121,180,255,0.11), transparent 38%), radial-gradient(circle at 86% 82%, rgba(170,205,255,0.1), transparent 34%), linear-gradient(180deg, #0d1624 0%, #111b2b 50%, #0f1724 100%)'
+            : 'radial-gradient(circle at 10% 20%, rgba(63,111,183,0.14), transparent 36%), radial-gradient(circle at 88% 84%, rgba(123,167,223,0.16), transparent 34%), linear-gradient(180deg, #f4f8ff 0%, #edf4ff 45%, #e6f0ff 100%)',
+        }}
+      />
+      <div
+        className={`absolute -top-24 -right-20 h-96 w-96 rounded-full blur-3xl ${
+          darkMode ? 'bg-sky-400/10' : 'bg-blue-300/25'
+        }`}
+      />
+      <div
+        className={`absolute -bottom-24 -left-20 h-80 w-80 rounded-full blur-3xl ${
+          darkMode ? 'bg-blue-200/10' : 'bg-sky-200/28'
+        }`}
+      />
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(15,23,42,0.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.35) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }}
+      />
+    </div>
   );
 };
 

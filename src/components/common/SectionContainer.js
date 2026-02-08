@@ -5,10 +5,8 @@ const SectionContainer = ({ children }) => {
   const { darkMode } = useTheme();
   
   return (
-    <div className={`rounded-lg shadow-lg p-6 ${
-      darkMode 
-        ? 'bg-gray-900 border border-gray-800 text-white' 
-        : 'bg-white border border-gray-200 text-gray-800'
+    <div className={`surface-card p-6 md:p-8 ${
+      darkMode ? 'bg-slate-900/90 text-slate-100 border-slate-700' : 'bg-white text-slate-800 border-slate-200'
     }`}>
       {children}
     </div>

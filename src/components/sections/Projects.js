@@ -7,6 +7,13 @@ import { PROJECT_LINKS } from '../../constants/links';
 const Projects = () => {
   const { darkMode } = useTheme();
   const [projectFilter, setProjectFilter] = useState('all');
+  const filterOptions = [
+    { label: 'All', value: 'all' },
+    { label: 'AI', value: 'ai' },
+    { label: 'Machine Learning', value: 'ml' },
+    { label: 'LLMs', value: 'llm' },
+    { label: 'NLP', value: 'nlp' },
+  ];
   
   // Updated projects data with links from constants
   const projectsData = [
@@ -61,64 +68,34 @@ const Projects = () => {
   const filteredProjects = projectFilter === 'all' 
     ? projectsData 
     : projectsData.filter(project => project.category === projectFilter);
+
+  const getFilterButtonClass = (value) => {
+    const isActive = projectFilter === value;
+    return `ui-button !py-2 !px-3.5 !rounded-md !text-xs ${
+      isActive
+        ? 'ui-button-primary'
+        : (darkMode ? 'text-slate-300 hover:bg-slate-800' : 'text-slate-700 hover:bg-slate-100')
+    }`;
+  };
   
   return (
-    <section className="mb-12">
+    <section className="content-section section-tone section-tone-cool">
       <SectionTitle title="Projects" />
       
       {/* Project filters */}
       <div className="flex justify-center mb-8 overflow-x-auto pb-2">
-        <div className={`inline-flex p-1 rounded-lg ${darkMode ? 'bg-blue-900/50' : 'bg-blue-100'}`}>
-          <button 
-            onClick={() => setProjectFilter('all')} 
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-              projectFilter === 'all' 
-                ? (darkMode ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white') 
-                : (darkMode ? 'text-gray-300 hover:bg-blue-800' : 'text-gray-800 hover:bg-blue-200')
-            }`}
-          >
-            All
-          </button>
-          <button 
-            onClick={() => setProjectFilter('ai')} 
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-              projectFilter === 'ai' 
-                ? (darkMode ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white') 
-                : (darkMode ? 'text-gray-300 hover:bg-blue-800' : 'text-gray-800 hover:bg-blue-200')
-            }`}
-          >
-            AI
-          </button>
-          <button 
-            onClick={() => setProjectFilter('ml')} 
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-              projectFilter === 'ml' 
-                ? (darkMode ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white') 
-                : (darkMode ? 'text-gray-300 hover:bg-blue-800' : 'text-gray-800 hover:bg-blue-200')
-            }`}
-          >
-            Machine Learning
-          </button>
-          <button 
-            onClick={() => setProjectFilter('llm')} 
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-              projectFilter === 'llm' 
-                ? (darkMode ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white') 
-                : (darkMode ? 'text-gray-300 hover:bg-blue-800' : 'text-gray-800 hover:bg-blue-200')
-            }`}
-          >
-            LLMs
-          </button>
-          <button 
-            onClick={() => setProjectFilter('nlp')} 
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-              projectFilter === 'nlp' 
-                ? (darkMode ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white') 
-                : (darkMode ? 'text-gray-300 hover:bg-blue-800' : 'text-gray-800 hover:bg-blue-200')
-            }`}
-          >
-            NLP
-          </button>
+        <div className={`inline-flex p-1 rounded-lg border ${
+          darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'
+        }`}>
+          {filterOptions.map((option) => (
+            <button
+              key={option.value}
+              onClick={() => setProjectFilter(option.value)}
+              className={getFilterButtonClass(option.value)}
+            >
+              {option.label}
+            </button>
+          ))}
         </div>
       </div>
       
