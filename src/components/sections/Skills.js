@@ -14,7 +14,6 @@ const Skills = () => {
       skills: [
         { name: "Python", level: 6 },
         { name: "C++", level: 3 },
-        { name: "Javascript", level: 2 },
         { name: "SQL", level: 5 },
         { name: "Pandas", level: 5 },
         { name: "NumPy", level: 6 },

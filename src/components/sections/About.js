@@ -180,7 +180,7 @@ const About = () => {
                 I'm currently focused on developing <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>explainable AI systems</span> that bring transparency to complex machine learning models. My work involves creating <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>multimodal AI frameworks</span> that can process and understand diverse types of data simultaneously.
               </p>
               <p className={darkMode ? 'text-gray-300' : 'text-gray-700'}>
-                At Penguin AI, I'm developing advanced solutions for <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>natural language understanding</span> and <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>conversational AI</span>. I'm particularly interested in creating AI systems that can effectively combine visual and textual information for enhanced reasoning capabilities.
+                At Penguin AI, I'm building <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>healthcare-specific AI applications</span>, automating critical workflows, and developing robust <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>machine learning systems</span> for highly dynamic needs in this space.
               </p>
             </div>
           </div>
