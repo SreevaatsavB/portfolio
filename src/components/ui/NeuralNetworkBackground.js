@@ -16,8 +16,6 @@ const NeuralNetworkBackground = () => {
     let animationPhase = 'forward'; // 'forward' or 'backward'
     let lastPhaseChange = 0;
     let phaseInterval = 6000; // ms between phase changes
-    let forwardPassCounter = 0; // Counter for forward passes
-    let targetForwardPasses = Math.floor(Math.random() * 3) + 1; // Random number between 1-3
     
     // Canvas setup
     const resizeCanvas = () => {
@@ -258,24 +256,11 @@ const NeuralNetworkBackground = () => {
       const now = Date.now();
       if (now - lastPhaseChange > phaseInterval && signals.length === 0) {
         // Only toggle phases when we've been running for a while
+        // This prevents backward pass from starting too early
         if (now - lastPhaseChange > phaseInterval * 1.5) {
           if (animationPhase === 'forward') {
-            // Increment forward pass counter
-            forwardPassCounter++;
-            
-            // Check if we've done enough forward passes
-            if (forwardPassCounter >= targetForwardPasses) {
-              // Reset counter and do backward pass
-              forwardPassCounter = 0;
-              // Set a new random target for next cycle
-              targetForwardPasses = Math.floor(Math.random() * 3) + 1;
-              startBackwardPass();
-            } else {
-              // Do another forward pass
-              startForwardPass();
-            }
+            startBackwardPass();
           } else {
-            // After backward pass, always do a forward pass
             startForwardPass();
           }
         } else if (animationPhase === 'forward') {
@@ -447,8 +432,6 @@ const NeuralNetworkBackground = () => {
     animationPhase = 'forward'; // Ensure we're in forward phase
     signals = []; // Ensure no signals exist initially
     lastPhaseChange = Date.now(); // Reset timer
-    forwardPassCounter = 0; // Reset forward pass counter
-    targetForwardPasses = Math.floor(Math.random() * 3) + 1; // Set random target (1-3)
     
     // Initial forward pass with delay
     setTimeout(startForwardPass, 1000);

@@ -18,9 +18,9 @@ const Experience = () => {
       description: 'Working as a full-time Data Scientist at Penguin AI.',
       skills: ['Multi Agent workflows', 'MLOps'],
       details: [
-        'Developing a minimal coding platform for businesses to build and deploy custom workflows in healthcare domain using llms.',
+        'Built production-grade LLM workflow systems to automate prior authorization, reducing medical nurse review time by approximately 30-40% with around 80-85% accuracy; currently improving the system with a HITL workflow.',
         'Working on applied research methodologies to enhance automated medical coding.',
-        'Development and maintainance of tradional ML pipelines for insurance denial prediction.'
+        'Developed an ML system for appeal denial prediction directly from customer data sources, with a corresponding ETL pipeline.'
       ]
     },
     {
@@ -35,7 +35,7 @@ const Experience = () => {
       details: [
         'Developed an end-to-end interruptible voice chat application with open-source components with MCP client-server for a user database.',
         'Improved the inference speed of production LLMs by 15% by quantization and developing speculative decoding n-gram head.',
-        'Enhanced customer chatbot solutions through custom LLM routing, dynamic memory updates, and advanced reranking models, decreasing the token cost by 30%.'
+        'Built and deployed a BERT-based NER model for healthcare PII redaction using a custom loss function.'
       ]
     },
     {

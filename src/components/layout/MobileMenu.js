@@ -40,6 +40,13 @@ const MobileMenu = ({ activeSection, handleNavClick }) => {
         >
           Skills
         </button>
+        {/* <button 
+          onClick={() => handleNavClick('hobbies')}
+          data-section="creative-mobile"
+          className={`${activeSection === 'hobbies' ? 'bg-indigo-500' : ''} py-2 px-4 rounded transition duration-300`}
+        >
+          Creative
+        </button> */}
       </nav>
     </div>
   );

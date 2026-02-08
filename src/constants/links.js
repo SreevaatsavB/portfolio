@@ -20,7 +20,8 @@ export const SOCIAL_LINKS = {
   };
   
   // Publication links
-  export const PUBLICATION_LINKS = {
-    givCXR: "",
-    videoSummarizationStudy: "https://dl.acm.org/doi/10.1145/3607540.3617139"
-  };
+export const PUBLICATION_LINKS = {
+  givCXR: "",
+  layoffToReemploymentAcceptance: process.env.PUBLIC_URL + "/papers/layoff-to-reemployment-acceptance.pdf",
+  videoSummarizationStudy: "https://dl.acm.org/doi/10.1145/3607540.3617139"
+}; 

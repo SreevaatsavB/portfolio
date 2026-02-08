@@ -13,10 +13,19 @@ const Research = () => {
       id: 1,
       title: "GIV-CXR: Densely Grounded, Visually Interpretable, Chest X-Ray Question Answering Dataset",
       authors: "Sreevaatsav Bavana, Adit Rushil Potta, Sai Amrit Patnaik, Nidhi Goyal",
-      conference: "Will be submitted to WACV 2026",
-      year: "2025",
-      status: "In progress",
+      conference: "KDD 2026",
+      year: "2026",
+      status: "Submitted",
       link: PUBLICATION_LINKS.givCXR
+    },
+    {
+      id: 3,
+      title: "From Layoff to Reemployment: Analyzing Social Media Narratives",
+      authors: "Yayati Gupta, Sreevaatsav Bavana, Sudhira Chegu, Sujith Sai Kalakonda, Yash Mathur, Manmitha Polsani, and Sanatan Sukhija",
+      conference: "CSoNet 2025",
+      year: "2025",
+      status: "Accepted",
+      link: PUBLICATION_LINKS.layoffToReemploymentAcceptance
     },
     {
       id: 2,

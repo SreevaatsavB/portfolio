@@ -27,7 +27,7 @@ const InteractiveBackground = () => {
     // Initialize particles with a more distributed pattern
     const initParticles = () => {
       particles = [];
-      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 5500); // More particles
+      const numberOfParticles = Math.floor((canvas.width * canvas.height) / 8000); // Reduced particle density
       
       // Create a grid to ensure particles are evenly distributed
       const gridSize = Math.sqrt(numberOfParticles);
@@ -255,8 +255,8 @@ const InteractiveBackground = () => {
           const dy = p.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          // Connection distance and opacity adjusted - increased distance for more connections
-          const maxDistance = 200;
+          // Connection distance and opacity adjusted - reduced distance for fewer connections
+          const maxDistance = 150;
           if (distance < maxDistance) {
             ctx.beginPath();
             // Light connection lines for deep sea blue in light mode

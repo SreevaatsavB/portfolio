@@ -59,6 +59,13 @@ const Header = ({ activeSection, setActiveSection }) => {
               >
                 Skills
               </button>
+              {/* <button 
+                onClick={() => handleNavClick('hobbies')}
+                data-section="creative"
+                className={`text-white ${activeSection === 'hobbies' ? 'font-bold border-b-2 border-white' : ''} transition duration-300 hover:text-sky-200`}
+              >
+                Creative
+              </button> */}
             </nav>
           </div>
           
