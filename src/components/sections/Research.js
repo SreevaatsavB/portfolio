@@ -69,7 +69,17 @@ const Research = () => {
               
               <p className={`text-sm mb-2 ${darkMode ? 'text-sky-400' : 'text-sky-700'}`}>
                 {pub.conference}, {pub.year}
-                {pub.status && <span className="ml-2 px-2 py-1 rounded-full text-xs bg-yellow-500 text-white">{pub.status}</span>}
+                {pub.status?.toLowerCase() === 'submitted' && (
+                  <span
+                    className={`ml-2 px-2 py-1 rounded-full text-xs border ${
+                      darkMode
+                        ? 'bg-amber-500/20 text-amber-200 border-amber-400/40'
+                        : 'bg-amber-100 text-amber-800 border-amber-300'
+                    }`}
+                  >
+                    {pub.status}
+                  </span>
+                )}
               </p>
               
               {pub.link && (
