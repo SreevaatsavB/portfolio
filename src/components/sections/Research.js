@@ -50,38 +50,6 @@ const Research = () => {
       <SectionTitle title="Research" />
       
       <SectionContainer>
-        <div
-          className={`p-6 rounded-lg mb-8 card-trace ${
-            darkMode ? 'bg-slate-900 border border-slate-700' : 'bg-slate-50 border border-slate-200'
-          }`}
-        >
-          <h3 className={`text-xl font-bold mb-3 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
-            Featured Update: MedReasoner at CVPR 2026
-          </h3>
-
-          <p className={`${darkMode ? 'text-slate-300' : 'text-slate-700'} mb-3`}>
-            Our work on grounded medical vision-language modeling has been accepted to the MedReasoner workshop at CVPR 2026.
-            This work was a collaborative effort with close guidance from Dr. Nidhi Goyal and Sai Amrit Patnaik, and strong
-            contributions from Adit Rushil Potta.
-          </p>
-
-          <p className={`${darkMode ? 'text-slate-300' : 'text-slate-700'} mb-3`}>
-            We address a key gap in current medical VQA systems: they are typically evaluated for textual correctness without
-            verifying whether model reasoning is grounded in the correct anatomical region.
-          </p>
-
-          <p className={`${darkMode ? 'text-slate-300' : 'text-slate-700'} mb-3`}>
-            To solve this, we built GIV-CXR, a grounded chest X-ray VQA benchmark with region-centric data generation across
-            36 anatomical regions, explicit QA-to-bounding-box alignment, IoU-based spatial evaluation, controlled generation,
-            hallucination filtering, and radiologist validation.
-          </p>
-
-          <p className={`${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-            Empirically, explicit spatial supervision improved localization by up to 5.7x while preserving text generation
-            quality and reducing reliance on spurious correlations. We are preparing to open-source the dataset and codebase.
-          </p>
-        </div>
-
         <div className="space-y-8 stagger-group">
           {publications.map((pub) => (
             <div 
