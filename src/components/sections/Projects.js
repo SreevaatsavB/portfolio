@@ -20,21 +20,21 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "AnimalCLEF 2026 — Wildlife Re-identification (9th Place)",
-      description: "Unsupervised clustering of ~2,400 unlabeled images across 4 species (lynx, salamanders, sea turtles, Texas horned lizards). Fused global embeddings (MiewID v3 + MegaDescriptor) with local feature matching (KAZE, ALIKED+LightGlue). Fine-tuned MegaDescriptor with ArcFace loss for a +6.4% gain. Used SAM2 to mask background keypoints before matching. 30+ documented experiments.",
-      category: "cv",
-      technologies: ["PyTorch", "HuggingFace", "SAM2", "LightGlue", "scikit-learn"],
-      period: "Apr 2026 - May 2026",
-      projectLink: PROJECT_LINKS.animalClef2026
-    },
-    {
-      id: 2,
       title: "Explainable Visual Question-Answering for Chest X-rays",
       description: "Curated dataset with 892,364 QA pairs with grounding on chest X-rays. Developed VLMs with grounding capabilities outperforming baselines by 10%.",
       category: "ai",
       technologies: ["HuggingFace", "PyTorch", "AWS EC2"],
       period: "Aug 2024 - Jan 2025",
       projectLink: PROJECT_LINKS.chestXrayQA
+    },
+    {
+      id: 2,
+      title: "AnimalCLEF 2026 — Wildlife Re-identification (9th Place)",
+      description: "Unsupervised clustering of ~2,400 unlabeled images across 4 species (lynx, salamanders, sea turtles, Texas horned lizards). Fused global embeddings (MiewID v3 + MegaDescriptor) with local feature matching (KAZE, ALIKED+LightGlue). Fine-tuned MegaDescriptor with ArcFace loss for a +6.4% gain. Used SAM2 to mask background keypoints before matching. 30+ documented experiments.",
+      category: "cv",
+      technologies: ["PyTorch", "HuggingFace", "SAM2", "LightGlue", "scikit-learn"],
+      period: "Apr 2026 - May 2026",
+      projectLink: PROJECT_LINKS.animalClef2026
     },
     {
       id: 3,
