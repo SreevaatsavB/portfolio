@@ -156,7 +156,7 @@ const About = () => {
           <div className="md:col-span-5 stagger-item">
             {/* Header section */}
             <div className="mb-6">
-              <div className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-1`}>Data Scientist</div>
+              <div className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-1`}>Senior Data Scientist</div>
               <div className="flex justify-between mb-4">
                 <div className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Penguin AI, Hyderabad</div>
               </div>
@@ -166,10 +166,7 @@ const About = () => {
             <div className="mb-8">
               <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>Hey, I'm Vaatsav!</h3>
               <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-4`}>
-                I'm a Data Scientist focused on building reliable, production-ready AI systems. I work at the intersection of applied machine learning, LLM engineering, and multimodal AI, turning ambiguous business problems into measurable outcomes. Outside of work, I recharge at the gym and through landscape painting.
-              </p>
-              <p className={darkMode ? 'text-gray-300' : 'text-gray-700'}>
-                I'm always eager to collaborate on projects that push the boundaries of what's possible with technology while making a positive impact on people's lives. Let's connect and create something amazing together!
+                I build production AI systems that work at scale — from multimodal models to agentic pipelines. Currently deep in generative AI and slowly making my way into robotics.
               </p>
             </div>
             
@@ -177,10 +174,7 @@ const About = () => {
             <div className="mb-8">
               <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>Current Focus</h3>
               <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-4`}>
-                I'm currently focused on developing <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>explainable AI systems</span> that bring transparency to complex machine learning models. My work involves creating <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>multimodal AI frameworks</span> that can process and understand diverse types of data simultaneously.
-              </p>
-              <p className={darkMode ? 'text-gray-300' : 'text-gray-700'}>
-                At Penguin AI, I'm building <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>healthcare-specific AI applications</span>, automating critical workflows, and developing robust <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>machine learning systems</span> for highly dynamic needs in this space.
+                Pushing deeper into <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>multimodal AI</span> — models that see, read, and reason together. Building and shipping <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>agentic systems</span> that handle complex, real-world workflows end to end. Exploring <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Robotics ML</span> — still in the early stages, learning the fundamentals of how models interact with the physical world. And applying all of it in the <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>healthcare domain</span> — a space I know well and where the stakes are real.
               </p>
             </div>
           </div>
