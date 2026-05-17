@@ -9,11 +9,27 @@ const Experience = () => {
   const experienceData = [
     {
       id: 1,
+      role: 'Senior Data Scientist',
+      company: 'Penguin AI',
+      companyUrl: 'https://www.penguinai.co/',
+      logo: `${process.env.PUBLIC_URL}/assets/logos/penguin-ai-logo.svg`,
+      period: 'May 2026 - Present',
+      description: 'Working as a Senior Data Scientist at Penguin AI.',
+      skills: ['Agents at Scale', 'Cost Optimization', 'Data Driven Development'],
+      details: [
+        'Building end-to-end LLM-based agent pipelines for healthcare workflows, incorporating live production user feedback for self-improving, data-driven agent development.',
+        'Leading AI governance efforts — compliance, bias mitigation, and safety alignment across deployed systems.',
+        'Driving cost optimization and scalability of agent infrastructure in production.'
+      ],
+      companyTrack: 'awone-penguin'
+    },
+    {
+      id: 2,
       role: 'Data Scientist',
       company: 'Penguin AI',
       companyUrl: 'https://www.penguinai.co/',
       logo: `${process.env.PUBLIC_URL}/assets/logos/penguin-ai-logo.svg`,
-      period: 'June 2025 - Present',
+      period: 'June 2025 - May 2026',
       description: 'Working as a full-time Data Scientist at Penguin AI.',
       skills: ['Multi Agent workflows', 'MLOps'],
       details: [
@@ -24,7 +40,7 @@ const Experience = () => {
       companyTrack: 'awone-penguin'
     },
     {
-      id: 2,
+      id: 3,
       role: 'Associate Data Scientist',
       company: 'Awone AI',
       companyUrl: 'https://awone.ai',
@@ -40,7 +56,7 @@ const Experience = () => {
       companyTrack: 'awone-penguin'
     },
     {
-      id: 3,
+      id: 4,
       role: 'Data Science Intern',
       company: 'Awone AI',
       companyUrl: 'https://awone.ai',
@@ -56,7 +72,7 @@ const Experience = () => {
       companyTrack: 'awone-penguin'
     },
     {
-      id: 4,
+      id: 5,
       role: 'Research Intern',
       company: 'Mahindra University',
       companyUrl: 'https://www.mahindrauniversity.edu.in',
@@ -86,7 +102,7 @@ const Experience = () => {
         <div className="space-y-20 stagger-group">
           {experienceData.map((experience) => {
             const isAwonePenguinTrack = experience.companyTrack === 'awone-penguin';
-            const isPenguinRole = experience.company === 'Penguin AI';
+            const isPenguinRole = experience.id === 2;
 
             return (
               <div key={experience.id} className="relative stagger-item">
