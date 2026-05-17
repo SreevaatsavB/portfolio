@@ -9,7 +9,6 @@ const Projects = () => {
   const [projectFilter, setProjectFilter] = useState('all');
   const filterOptions = [
     { label: 'All', value: 'all' },
-    { label: 'AI', value: 'ai' },
     { label: 'Machine Learning', value: 'ml' },
     { label: 'Computer Vision', value: 'cv' },
     { label: 'LLMs', value: 'llm' },
@@ -22,7 +21,7 @@ const Projects = () => {
       id: 1,
       title: "Explainable Visual Question-Answering for Chest X-rays",
       description: "Curated dataset with 892,364 QA pairs with grounding on chest X-rays. Developed VLMs with grounding capabilities outperforming baselines by 10%.",
-      category: "ai",
+      category: ["cv", "llm"],
       technologies: ["HuggingFace", "PyTorch", "AWS EC2"],
       period: "Aug 2024 - Jan 2025",
       projectLink: PROJECT_LINKS.chestXrayQA
@@ -31,7 +30,7 @@ const Projects = () => {
       id: 2,
       title: "AnimalCLEF 2026 — Wildlife Re-identification (9th Place)",
       description: "Unsupervised clustering of ~2,400 unlabeled images across 4 species (lynx, salamanders, sea turtles, Texas horned lizards). Fused global embeddings (MiewID v3 + MegaDescriptor) with local feature matching (KAZE, ALIKED+LightGlue). Fine-tuned MegaDescriptor with ArcFace loss for a +6.4% gain. Used SAM2 to mask background keypoints before matching. 30+ documented experiments.",
-      category: "cv",
+      category: ["cv", "ml"],
       technologies: ["PyTorch", "HuggingFace", "SAM2", "LightGlue", "scikit-learn"],
       period: "Apr 2026 - May 2026",
       projectLink: PROJECT_LINKS.animalClef2026
@@ -40,7 +39,7 @@ const Projects = () => {
       id: 3,
       title: "Generative AI fundamentals from scratch",
       description: "Coded modules like transformers and language models from scratch using PyTorch. Matched each intermediate output with HuggingFace's implementation.",
-      category: "llm",
+      category: ["llm"],
       technologies: ["HuggingFace", "PyTorch"],
       period: "Apr 2024 - May 2024",
       projectLink: PROJECT_LINKS.scratchLLM
@@ -58,7 +57,7 @@ const Projects = () => {
       id: 5,
       title: "Enhancing Video Summarization with Text-to-Image Module",
       description: "Improved text-to-image projection by augmenting with a learnable projection layer. Finetuned the baseline's projection module using QVHighlights dataset.",
-      category: "ml",
+      category: ["ml", "cv"],
       technologies: ["PyTorch", "Nvidia-SLURM"],
       period: "Aug 2023 - Dec 2023",
       projectLink: PROJECT_LINKS.videoSummarization
@@ -67,7 +66,7 @@ const Projects = () => {
       id: 6,
       title: "Analysis of Social Media Posts About Mass Layoffs",
       description: "Collected data from LinkedIn, Twitter and Layoffs.fyi. Analyzed trends and patterns using language modeling and hashtag analysis.",
-      category: "nlp",
+      category: ["nlp"],
       technologies: ["HuggingFace", "Scikit-learn", "BeautifulSoup", "GitHub Actions"],
       period: "Dec 2022 - Jun 2023",
       projectLink: PROJECT_LINKS.layoffsAnalysis
@@ -75,9 +74,9 @@ const Projects = () => {
   ];
   
   // Filtered projects based on category
-  const filteredProjects = projectFilter === 'all' 
-    ? projectsData 
-    : projectsData.filter(project => project.category === projectFilter);
+  const filteredProjects = projectFilter === 'all'
+    ? projectsData
+    : projectsData.filter(project => project.category.includes(projectFilter));
 
   const getFilterButtonClass = (value) => {
     const isActive = projectFilter === value;
