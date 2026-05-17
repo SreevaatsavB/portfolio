@@ -20,7 +20,7 @@ const Skills = () => {
         { name: "Scikit-learn", level: 6 },
         { name: "HuggingFace", level: 6 },
         { name: "PyTorch", level: 6 },
-        { name: "TensorFlow", level: 5 }
+        { name: "OpenCV", level: 4 }
       ]
     },
     {
@@ -34,11 +34,13 @@ const Skills = () => {
     {
       category: "AI engineering & Infrastructure",
       skills: [
+        { name: "LangChain", level: 5 },
+        { name: "LangGraph", level: 5 },
+        { name: "Langfuse", level: 4 },
         { name: "MCP", level: 6 },
-        { name: "Langchain", level: 5 },
         { name: "VLLM", level: 4 },
         { name: "MLFlow", level: 4 },
-        { name: "SLRUM", level: 4 },
+        { name: "SLURM", level: 4 },
         { name: "Ray", level: 2 }
       ]
     },
@@ -54,7 +56,17 @@ const Skills = () => {
         { name: "Computer networks", level: 4 },
         { name: "GitHub Actions", level: 4 },
         { name: "MongoDB", level: 5 },
-
+        { name: "PostgreSQL", level: 4 },
+        { name: "Kubernetes", level: 4 },
+      ]
+    }
+    {
+      category: "Robotics & Simulation",
+      skills: [
+        { name: "LeRobot", level: 2 },
+        { name: "MuJoCo", level: 2 },
+        { name: "CoppeliaSim", level: 2 },
+        { name: "Fairino", level: 2 },
       ]
     }
   ];
