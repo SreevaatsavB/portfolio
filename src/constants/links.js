@@ -12,6 +12,7 @@ export const SOCIAL_LINKS = {
   
   // Project links
   export const PROJECT_LINKS = {
+    animalClef2026: "https://github.com/SreevaatsavB/animalclef-2026-solution",
     chestXrayQA: "",
     nvidiaSDK: "https://github.com/SreevaatsavB/ICETCI-Hackathon",
     videoSummarization: "",

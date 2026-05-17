@@ -11,6 +11,7 @@ const Projects = () => {
     { label: 'All', value: 'all' },
     { label: 'AI', value: 'ai' },
     { label: 'Machine Learning', value: 'ml' },
+    { label: 'Computer Vision', value: 'cv' },
     { label: 'LLMs', value: 'llm' },
     { label: 'NLP', value: 'nlp' },
   ];
@@ -19,6 +20,15 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
+      title: "AnimalCLEF 2026 — Wildlife Re-identification (9th Place)",
+      description: "Unsupervised clustering of ~2,400 unlabeled images across 4 species (lynx, salamanders, sea turtles, Texas horned lizards). Fused global embeddings (MiewID v3 + MegaDescriptor) with local feature matching (KAZE, ALIKED+LightGlue). Fine-tuned MegaDescriptor with ArcFace loss for a +6.4% gain. Used SAM2 to mask background keypoints before matching. 30+ documented experiments.",
+      category: "cv",
+      technologies: ["PyTorch", "HuggingFace", "SAM2", "LightGlue", "scikit-learn"],
+      period: "Apr 2026 - May 2026",
+      projectLink: PROJECT_LINKS.animalClef2026
+    },
+    {
+      id: 2,
       title: "Explainable Visual Question-Answering for Chest X-rays",
       description: "Curated dataset with 892,364 QA pairs with grounding on chest X-rays. Developed VLMs with grounding capabilities outperforming baselines by 10%.",
       category: "ai",
@@ -27,7 +37,7 @@ const Projects = () => {
       projectLink: PROJECT_LINKS.chestXrayQA
     },
     {
-      id: 2,
+      id: 3,
       title: "Generative AI fundamentals from scratch",
       description: "Coded modules like transformers and language models from scratch using PyTorch. Matched each intermediate output with HuggingFace's implementation.",
       category: "llm",
@@ -36,7 +46,7 @@ const Projects = () => {
       projectLink: PROJECT_LINKS.scratchLLM
     },
     {
-      id: 3,
+      id: 4,
       title: "AI-Assisted Learning for NVIDIA SDKs and Toolkits",
       description: "Developed a fine-tuned LLM that assists users in understanding and effectively using various NVIDIA SDKs. Secured 3rd place in ICETCI Hackathon.",
       category: "llm",
@@ -45,7 +55,7 @@ const Projects = () => {
       projectLink: PROJECT_LINKS.nvidiaSDK
     },
     {
-      id: 4,
+      id: 5,
       title: "Enhancing Video Summarization with Text-to-Image Module",
       description: "Improved text-to-image projection by augmenting with a learnable projection layer. Finetuned the baseline's projection module using QVHighlights dataset.",
       category: "ml",
@@ -54,7 +64,7 @@ const Projects = () => {
       projectLink: PROJECT_LINKS.videoSummarization
     },
     {
-      id: 5,
+      id: 6,
       title: "Analysis of Social Media Posts About Mass Layoffs",
       description: "Collected data from LinkedIn, Twitter and Layoffs.fyi. Analyzed trends and patterns using language modeling and hashtag analysis.",
       category: "nlp",
