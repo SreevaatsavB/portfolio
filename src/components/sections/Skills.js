@@ -59,7 +59,7 @@ const Skills = () => {
         { name: "PostgreSQL", level: 4 },
         { name: "Kubernetes", level: 4 },
       ]
-    }
+    },
     {
       category: "Robotics & Simulation",
       skills: [
