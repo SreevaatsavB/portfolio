@@ -15,10 +15,10 @@ const Hero = () => {
           <div className="md:w-3/5 mb-4 md:mb-0 text-center md:text-left">
             <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>Sreevaatsav B</h1>
             <h2 className={`text-lg md:text-xl mb-5 font-medium ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-              Senior Data Scientist | Multimodal AI | Generative AI & Robotics | Gold Medalist
+              Senior Data Scientist | Multimodal AI | Robotic ML | Gold Medalist
             </h2>
             <p className={`text-base md:text-lg mb-8 max-w-xl ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-              Senior Data Scientist at Penguin AI · NLP, multimodal AI, and generative models — building systems that work at scale.
+              Senior Data Scientist at Penguin AI. My focus is on multimodal AI, robotic policies, ML systems, and LLM engineering — building systems that work at scale in the real world.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <a 

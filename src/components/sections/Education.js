@@ -79,7 +79,7 @@ const Education = () => {
                   />
                 </div>
                 <p className={`mt-2 text-center text-base italic ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} style={{ maxWidth: '560px' }}>
-                Honored to receive the Gold Medal from Mr. Anand Mahindra at my convocation ceremony
+                A memorable moment at convocation, with Mr. Anand Mahindra
                 </p>
               </div>
               

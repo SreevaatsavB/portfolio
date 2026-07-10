@@ -174,7 +174,7 @@ const About = () => {
             <div className="mb-8">
               <h3 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>Current Focus</h3>
               <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mb-4`}>
-                Pushing deeper into <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>multimodal AI</span> — models that see, read, and reason together. Building and shipping <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>agentic systems</span> that handle complex, real-world workflows end to end. Exploring <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Robotics ML</span> — still in the early stages, learning the fundamentals of how models interact with the physical world. And applying all of it in the <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>healthcare domain</span> — a space I know well and where the stakes are real.
+                Pushing deeper into <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>multimodal AI</span> — models that see, read, and reason together. Building and shipping <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>agentic systems</span> that handle complex, real-world workflows end to end. Exploring <span className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>Robotics ML</span> — still in the early stages, learning the fundamentals of how models interact with the physical world.
               </p>
             </div>
           </div>

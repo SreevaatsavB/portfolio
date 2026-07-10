@@ -13,7 +13,7 @@ export const SOCIAL_LINKS = {
   // Project links
   export const PROJECT_LINKS = {
     animalClef2026: "https://github.com/SreevaatsavB/animalclef-2026-solution",
-    chestXrayQA: "",
+    chestXrayQA: "https://sreevaatsavb.github.io/GIV-CXR/",
     nvidiaSDK: "https://github.com/SreevaatsavB/ICETCI-Hackathon",
     videoSummarization: "",
     layoffsAnalysis: "",
@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = {
   
   // Publication links
 export const PUBLICATION_LINKS = {
-  givCXR: "",
+  givCXR: "https://sreevaatsavb.github.io/GIV-CXR/",
   layoffToReemploymentAcceptance: process.env.PUBLIC_URL + "/papers/layoff-to-reemployment-acceptance.pdf",
   videoSummarizationStudy: "https://dl.acm.org/doi/10.1145/3607540.3617139"
 }; 
