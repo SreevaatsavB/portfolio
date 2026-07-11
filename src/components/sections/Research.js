@@ -1,12 +1,9 @@
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
 import SectionTitle from '../common/SectionTitle';
 import SectionContainer from '../common/SectionContainer';
 import { PUBLICATION_LINKS } from '../../constants/links';
 
 const Research = () => {
-  const { darkMode } = useTheme();
-  
   // Publications data with links from constants
   const publications = [
     {
@@ -39,80 +36,58 @@ const Research = () => {
 
   // Research interests from resume
   const researchInterests = [
-    "Multi modal model research & frameworks development",
-    "Explainable AI techniques in the field of conversational AI and multi-modalities",
-    "Efficient fine-tuning and compression techniques for domain-specific small LLMs/VLMs",
-    "Grounded and anatomically faithful evaluation for medical VQA and vision-language models"
+    "Learning robotic manipulation policies from multimodal perception",
+    "Sim-to-real transfer and embodied learning for robotic control",
+    "Grounded, interpretable vision-language models (VLMs)"
   ];
 
   return (
-    <section className="content-section section-tone section-tone-warm stagger-group">
+    <section className="content-section stagger-group">
       <SectionTitle title="Research" />
-      
+
       <SectionContainer>
-        <div className="space-y-8 stagger-group">
+        <div className="divide-y divide-[var(--border-color)]">
           {publications.map((pub) => (
-            <div 
-              key={pub.id} 
-              className={`p-6 rounded-lg mb-4 card-trace stagger-item ${
-                darkMode 
-                  ? 'bg-slate-900 border border-slate-700' 
-                  : 'bg-slate-50 border border-slate-200'
-              }`}
-            >
-              <h3 className={`text-xl font-bold mb-2 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
+            <div key={pub.id} className="stagger-item py-5 first:pt-0 last:pb-0">
+              <h3 className="entry-title mb-1.5">
                 {pub.title}
               </h3>
-              
-              <p className={`mb-2 ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+
+              <p className="text-[0.93rem] text-[var(--text-secondary)] mb-1">
                 {pub.authors}
               </p>
-              
-              <p className={`text-sm mb-2 ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+
+              <p className="text-[0.85rem] text-[var(--text-muted)] italic mb-2">
                 {pub.conference}, {pub.year}
                 {pub.status?.toLowerCase() === 'submitted' && (
-                  <span
-                    className={`ml-2 ui-badge ${
-                      darkMode
-                        ? 'bg-amber-500/20 text-amber-200 border-amber-400/40'
-                        : 'bg-amber-100 text-amber-800 border-amber-300'
-                    }`}
-                  >
+                  <span className="ui-badge not-italic ml-2">
                     {pub.status}
                   </span>
                 )}
               </p>
-              
+
               {pub.link && (
-                <div className="mt-3">
-                  <a 
-                    href={pub.link} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center ${darkMode ? 'text-sky-300' : 'text-sky-700'} hover:underline`}
-                  >
-                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
-                      <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
-                    </svg>
-                    View Publication
-                  </a>
-                </div>
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"
+                >
+                  View publication →
+                </a>
               )}
             </div>
           ))}
         </div>
 
-        <div className="mt-10 stagger-item">
-          <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-slate-100' : 'text-slate-900'}`}>
+        <div className="mt-8 pt-6 border-t border-[var(--border-color)] stagger-item">
+          <h3 className="eyebrow-label mb-3">
             Research Interests
           </h3>
-          
-          <ul className="list-disc pl-6 space-y-2">
-            {researchInterests.map((interest, index) => (
-              <li key={index} className={darkMode ? 'text-slate-300' : 'text-slate-700'}>
-                {interest}
-              </li>
+
+          <ul className="list-disc pl-5 space-y-1.5 text-[var(--text-secondary)]">
+            {researchInterests.map((interest) => (
+              <li key={interest}>{interest}</li>
             ))}
           </ul>
         </div>

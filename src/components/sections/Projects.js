@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
 import ProjectCard from '../ui/ProjectCard';
 import SectionTitle from '../common/SectionTitle';
+import SectionContainer from '../common/SectionContainer';
 import { PROJECT_LINKS } from '../../constants/links';
 
 const Projects = () => {
-  const { darkMode } = useTheme();
   const [projectFilter, setProjectFilter] = useState('all');
   const filterOptions = [
     { label: 'All', value: 'all' },
@@ -14,7 +13,7 @@ const Projects = () => {
     { label: 'LLMs', value: 'llm' },
     { label: 'NLP', value: 'nlp' },
   ];
-  
+
   // Updated projects data with links from constants
   const projectsData = [
     {
@@ -72,59 +71,38 @@ const Projects = () => {
       projectLink: PROJECT_LINKS.layoffsAnalysis
     }
   ];
-  
+
   // Filtered projects based on category
   const filteredProjects = projectFilter === 'all'
     ? projectsData
     : projectsData.filter(project => project.category.includes(projectFilter));
 
-  const getFilterButtonClass = (value) => {
-    const isActive = projectFilter === value;
-    return `ui-button !py-2 !px-3.5 !rounded-md !text-xs ${
-      isActive
-        ? 'ui-button-primary'
-        : (darkMode ? 'text-slate-300 hover:bg-slate-800' : 'text-slate-700 hover:bg-slate-100')
-    }`;
-  };
-  
   return (
-    <section className="content-section section-tone section-tone-cool stagger-group">
+    <section className="content-section stagger-group">
       <SectionTitle title="Projects" />
-      
+
       {/* Project filters */}
-      <div className="flex justify-center mb-8 overflow-x-auto pb-2 stagger-item">
-        <div className={`inline-flex p-1 rounded-lg border ${
-          darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'
-        }`}>
-          {filterOptions.map((option) => (
-            <button
-              key={option.value}
-              onClick={() => setProjectFilter(option.value)}
-              className={getFilterButtonClass(option.value)}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
-      </div>
-      
-      {/* Projects grid */}
-      <div className="grid md:grid-cols-2 gap-6 stagger-group">
-        {filteredProjects.map((project) => (
-          <ProjectCard 
-            key={project.id} 
-            project={{
-              ...project,
-              // Adding these props for the ProjectCard component
-              description: project.description,
-              technologies: project.technologies,
-              period: project.period,
-              projectLink: project.projectLink
-            }}
-            index={project.id - 1}
-          />
+      <div className="flex flex-wrap gap-x-5 gap-y-2 mb-6 stagger-item">
+        {filterOptions.map((option) => (
+          <button
+            key={option.value}
+            onClick={() => setProjectFilter(option.value)}
+            className={`text-xs uppercase tracking-[0.06em] pb-0.5 border-b transition-colors ${
+              projectFilter === option.value
+                ? 'text-[var(--accent)] border-[var(--accent)]'
+                : 'text-[var(--text-muted)] border-transparent hover:text-[var(--text-primary)]'
+            }`}
+          >
+            {option.label}
+          </button>
         ))}
       </div>
+
+      <SectionContainer>
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </SectionContainer>
     </section>
   );
 };

@@ -33,7 +33,7 @@ const Portfolio = () => {
       {activeSection !== 'hobbies' && <Hero />}
 
       {/* Main Content */}
-      <main className="portfolio-main px-4 md:px-6 py-10 md:py-12 relative z-10">
+      <main className="portfolio-main px-4 md:px-0 pt-14 pb-10 md:pt-16 md:pb-12 relative z-10">
         {/* Section visibility is controlled by AnimatePresence for smooth transitions */}
         <AnimatePresence mode="wait">
           {activeSection === 'about' && (
