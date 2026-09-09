@@ -19,7 +19,7 @@ const Projects = () => {
     {
       id: 1,
       title: "Explainable Visual Question-Answering for Chest X-rays",
-      description: "Curated dataset with 892,364 QA pairs with grounding on chest X-rays. Developed VLMs with grounding capabilities outperforming baselines by 10%.",
+      description: "Curated a densely grounded chest X-ray VQA benchmark with 355,293 QA pairs across 36 anatomical regions. Developed grounded VLM baselines achieving 68.1 mIoU for spatial grounding and leading G-Eval answer quality (3.98).",
       category: ["cv", "llm"],
       technologies: ["HuggingFace", "PyTorch", "AWS EC2"],
       period: "Aug 2024 - Jan 2025",
