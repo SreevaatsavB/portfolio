@@ -8,6 +8,7 @@ const Projects = () => {
   const [projectFilter, setProjectFilter] = useState('all');
   const filterOptions = [
     { label: 'All', value: 'all' },
+    { label: 'Robotics', value: 'robotics' },
     { label: 'Machine Learning', value: 'ml' },
     { label: 'Computer Vision', value: 'cv' },
     { label: 'LLMs', value: 'llm' },
@@ -16,6 +17,24 @@ const Projects = () => {
 
   // Updated projects data with links from constants
   const projectsData = [
+    {
+      id: 0,
+      title: "Imitation-Learning Policies on a Fairino FR5 Cobot",
+      description: "Collected ~750 teleoperated demonstrations on a 6-DOF Fairino FR5 across three manipulation tasks, recorded with a wrist-mounted Intel RealSense D405 camera, and built the pipeline that aligns ~100 Hz robot state logs to 30 Hz camera frames as LeRobot v3.0 datasets. Trained ACT, diffusion policy and π0 / π0.5 and ran them closed-loop on the arm at 30 Hz. π0 reached 80% on sanding and 65% on colour sorting over 20 autonomous trials each. Collaborator: Vivek Kanjarla.",
+      category: ["robotics", "ml", "cv"],
+      technologies: ["LeRobot", "PyTorch", "π0 / π0.5", "ACT", "Diffusion Policy", "RealSense", "Fairino SDK"],
+      period: "Jun 2026 - Present",
+      projectLink: PROJECT_LINKS.fr5Policies
+    },
+    {
+      id: 6,
+      title: "Robotic ML from Scratch — ACT",
+      description: "Reimplemented ACT (Action Chunking with Transformers) from the paper — CVAE plus transformer encoder/decoder — built up through autoencoder and VAE components.",
+      category: ["robotics", "ml"],
+      technologies: ["PyTorch"],
+      period: "2026",
+      projectLink: PROJECT_LINKS.actFromScratch
+    },
     {
       id: 1,
       title: "Explainable Visual Question-Answering for Chest X-rays",

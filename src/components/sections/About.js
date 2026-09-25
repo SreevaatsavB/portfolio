@@ -55,17 +55,18 @@ const About = () => {
               <h3 className="eyebrow-label mb-3">Bio</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
                 I build production AI systems that work at scale — from multimodal models to agentic
-                pipelines. Currently deep in generative AI and slowly making my way into robotics.
+                pipelines. Over the past year my focus has moved towards robot learning, training
+                imitation-learning policies that run on a real 6-DOF cobot.
               </p>
             </div>
 
             <div>
               <h3 className="eyebrow-label mb-3">Current Focus</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Pushing deeper into multimodal AI — models that see, read, and reason together.
-                Building and shipping agentic systems that handle complex, real-world workflows end
-                to end. Exploring robotics ML — still in the early stages, learning the fundamentals
-                of how models interact with the physical world.
+                Robot learning on a Fairino FR5 cobot — teleoperated data collection, and training
+                ACT, diffusion policy and π0 / π0.5 vision-language-action policies that run on the
+                arm. Alongside that, multimodal AI — models that see, read and reason together — and
+                agentic systems that handle complex, real-world workflows end to end.
               </p>
             </div>
           </div>

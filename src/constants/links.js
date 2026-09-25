@@ -17,7 +17,9 @@ export const SOCIAL_LINKS = {
     nvidiaSDK: "https://github.com/SreevaatsavB/ICETCI-Hackathon",
     videoSummarization: "",
     layoffsAnalysis: "",
-    scratchLLM: "https://github.com/SreevaatsavB/Generative_AI_fundamentals"
+    scratchLLM: "https://github.com/SreevaatsavB/Generative_AI_fundamentals",
+    fr5Policies: "https://github.com/SreevaatsavB/fairino-fr5-policies",
+    actFromScratch: "https://github.com/SreevaatsavB/robotic-ml-from-scratch"
   };
   
   // Publication links

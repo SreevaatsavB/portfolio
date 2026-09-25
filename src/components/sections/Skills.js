@@ -21,8 +21,12 @@ const Skills = () => {
       skills: ["AWS", "Docker", "Async programming", "Web Sockets", "Linux", "FastAPI", "Computer networks", "GitHub Actions", "MongoDB", "PostgreSQL", "Kubernetes"]
     },
     {
+      category: "Robot Learning",
+      skills: ["Imitation learning", "ACT", "Diffusion Policy", "π0 / π0.5 VLAs", "LoRA & quantized fine-tuning"]
+    },
+    {
       category: "Robotics & Simulation",
-      skills: ["LeRobot", "MuJoCo", "CoppeliaSim", "Fairino"]
+      skills: ["ROS 2", "LeRobot", "Fairino SDK", "SO-101", "RealSense", "MuJoCo", "CoppeliaSim"]
     }
   ];
 
