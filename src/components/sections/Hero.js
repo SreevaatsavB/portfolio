@@ -26,9 +26,9 @@ const Hero = () => {
         </div>
 
         <p className="text-base md:text-[1.05rem] leading-relaxed text-[var(--text-secondary)] max-w-2xl mb-5">
-          I work on multimodal AI, robotic policies, and LLM systems — building
-          production AI that works at scale, with a growing research focus on grounded
-          vision-language models. Gold medalist, B.Tech in Artificial Intelligence.
+          I work on multimodal AI, robotic policies, and LLM systems, building
+          production AI that works at scale, with a growing research focus on robot learning
+          and vision-language-action models. Gold medalist, B.Tech in Artificial Intelligence.
         </p>
 
         <a

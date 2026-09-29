@@ -36,9 +36,10 @@ const Research = () => {
 
   // Research interests from resume
   const researchInterests = [
-    "Learning robotic manipulation policies from multimodal perception",
-    "Sim-to-real transfer and embodied learning for robotic control",
-    "Grounded, interpretable vision-language models (VLMs)"
+    "Cross-embodiment learning: training manipulation policies on human videos and other robots' data that still work on a new arm",
+    "Action generation in VLAs: flow-matching action heads for models like π0 and OpenVLA-OFT",
+    "RL fine-tuning of imitation-learned policies, so they improve beyond their demonstrations and recover from their own mistakes",
+    "Language grounding in robot policies: making sure the policy picks the object or slot the instruction actually names"
   ];
 
   return (

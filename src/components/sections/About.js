@@ -54,7 +54,7 @@ const About = () => {
             <div className="mb-7">
               <h3 className="eyebrow-label mb-3">Bio</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                I build production AI systems that work at scale — from multimodal models to agentic
+                I build production AI systems that work at scale, from multimodal models to agentic
                 pipelines. Over the past year my focus has moved towards robot learning, training
                 imitation-learning policies that run on a real 6-DOF cobot.
               </p>
@@ -63,9 +63,9 @@ const About = () => {
             <div>
               <h3 className="eyebrow-label mb-3">Current Focus</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Robot learning on a Fairino FR5 cobot — teleoperated data collection, and training
+                Robot learning on a Fairino FR5 cobot: teleoperated data collection, and training
                 ACT, diffusion policy and π0 / π0.5 vision-language-action policies that run on the
-                arm. Alongside that, multimodal AI — models that see, read and reason together — and
+                arm. Alongside that, multimodal AI (models that see, read and reason together) and
                 agentic systems that handle complex, real-world workflows end to end.
               </p>
             </div>

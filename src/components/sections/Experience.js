@@ -14,7 +14,7 @@ const Experience = () => {
       skills: ['ML System Design', 'Agents at Scale', 'Cost Optimization', 'Data Driven Development'],
       details: [
         'Building end-to-end LLM-based agent pipelines for healthcare workflows, incorporating live production user feedback for self-improving, data-driven agent development.',
-        'Leading AI governance efforts — compliance, bias mitigation, and safety alignment across deployed systems.',
+        'Leading AI governance efforts: compliance, bias mitigation, and safety alignment across deployed systems.',
         'Designing ML system architecture for cost optimization and scalability of agent infrastructure in production.'
       ],
       companyTrack: 'awone-penguin'
