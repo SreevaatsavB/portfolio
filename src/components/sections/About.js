@@ -25,22 +25,6 @@ const About = () => {
               <li className="text-[var(--text-secondary)]">Gold Medalist, B.Tech AI</li>
             </ul>
 
-            <h3 className="eyebrow-label mb-4">Languages</h3>
-            <ul className="space-y-2 mb-9 text-sm">
-              <li className="flex justify-between">
-                <span className="text-[var(--text-secondary)]">English</span>
-                <span className="text-[var(--text-muted)]">Professional</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-[var(--text-secondary)]">Hindi</span>
-                <span className="text-[var(--text-muted)]">Native</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-[var(--text-secondary)]">Telugu</span>
-                <span className="text-[var(--text-muted)]">Native</span>
-              </li>
-            </ul>
-
             <h3 className="eyebrow-label mb-4">Connect</h3>
             <SocialIcons />
           </div>
