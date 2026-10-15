@@ -20,7 +20,7 @@ const Projects = () => {
     {
       id: 0,
       title: "Imitation-Learning Policies on a Fairino FR5 Cobot",
-      description: "With SliAct Robotics. Collected 1,021 teleoperated demonstrations (about 11.5 hours) on a 6-DOF Fairino FR5 across colour sorting, sanding and pick-to-light, and built the pipeline that turns robot logs and camera video into LeRobot datasets. Trained ACT, Diffusion Policy, Octo and π0 / π0.5 and ran them closed-loop at 30 Hz. Found that a π0 checkpoint with low validation loss did worse than simply not moving; switching to relative joint actions fixed it. π0 reached 80% on sanding and 65% on colour sorting over 20 trials each; π0.5 is now training on pick-to-light. Collaborator: Vivek Kanjarla.",
+      description: "Collected 1,021 teleoperated demonstrations (about 11.5 hours) on a 6-DOF Fairino FR5 across colour sorting, sanding and pick-to-light, and built the pipeline that turns robot logs and camera video into LeRobot datasets. Trained ACT, Diffusion Policy, Octo and π0 / π0.5 and ran them closed-loop at 30 Hz. Found that a π0 checkpoint with low validation loss did worse than simply not moving; switching to relative joint actions fixed it. π0 reached 80% on sanding and 65% on colour sorting over 20 trials each; π0.5 is now training on pick-to-light. Collaborator: Vivek Kanjarla.",
       category: ["robotics", "ml", "cv"],
       technologies: ["LeRobot", "PyTorch", "π0 / π0.5", "ACT", "Diffusion Policy", "ROS 2", "RealSense", "Fairino SDK"],
       blogLink: "/blog",

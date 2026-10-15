@@ -2,7 +2,6 @@ import React from 'react';
 import SectionTitle from '../common/SectionTitle';
 import SectionContainer from '../common/SectionContainer';
 import SocialIcons from '../ui/SocialIcons';
-import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -65,13 +64,8 @@ const About = () => {
             <div>
               <h3 className="eyebrow-label mb-3">Current Focus</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Robot learning on a Fairino FR5 cobot with SliAct Robotics: teleoperated data collection,
-                and training ACT, Diffusion Policy and π0 / π0.5 vision-language-action policies that run
-                on the arm. I've written up what worked and what didn't in a{' '}
-                <Link to="/blog" className="text-[var(--accent)] hover:opacity-80 transition-opacity">
-                  three-part blog series
-                </Link>
-                . Alongside that, multimodal AI (models that see, read and reason together) and agentic
+                I'm interested in robot learning policies, especially for manipulation on real robot arms.
+                Alongside that, multimodal AI (models that see, read and reason together) and agentic
                 systems that handle complex, real-world workflows end to end.
               </p>
             </div>

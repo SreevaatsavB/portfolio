@@ -37,8 +37,7 @@ const Research = () => {
   // Research interests from resume
   const researchInterests = [
     "Long-horizon task planning for contact-rich manipulation, where a policy has to finish a whole sequence of steps and not just one",
-    "Explainable transitions between task steps, so it is clear exactly where a long task failed",
-    "Language grounding in robot policies: making sure the policy picks the object or slot the instruction actually names",
+    "Reinforcement learning (RL) post-training of robot policies, so a policy learned from demonstrations keeps improving on the real robot and learns to recover from its own mistakes",
     "Learning from egocentric video, as a way to collect demonstrations without teleoperating the robot (something I want to explore)"
   ];
 

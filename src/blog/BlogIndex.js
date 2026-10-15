@@ -2,16 +2,24 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { formatDate, slugify } from './posts';
 
-const PostSummary = ({ post }) => (
-  <li className="index-post">
-    {post.part && <p className="eyebrow-label">Part {post.part}</p>}
-    <h3 className="entry-title">
-      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-    </h3>
-    {post.summary && <p className="index-summary">{post.summary}</p>}
-    <p className="meta-text">{formatDate(post.date)}</p>
-  </li>
-);
+// The whole row is one link, styled so it reads as clickable (accent title,
+// "Read post" cue, hover highlight). Unfinished dates ("XX") are not shown.
+const PostSummary = ({ post }) => {
+  const date = formatDate(post.date);
+  return (
+    <li className="index-post">
+      <Link to={`/blog/${post.slug}`} className="index-post-link">
+        {post.part && <p className="eyebrow-label">Part {post.part}</p>}
+        <h3 className="entry-title index-post-title">{post.title}</h3>
+        {post.summary && <p className="index-summary">{post.summary}</p>}
+        <p className="index-post-meta">
+          <span className="index-read">Read post <span aria-hidden="true">→</span></span>
+          {date && date !== 'Draft' && <span className="meta-text">{date}</span>}
+        </p>
+      </Link>
+    </li>
+  );
+};
 
 const BlogIndex = ({ posts }) => {
   useEffect(() => {

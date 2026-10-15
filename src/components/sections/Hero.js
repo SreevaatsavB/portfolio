@@ -16,7 +16,8 @@ const FR5_STATS = [
   { value: '65%', label: 'colour sorting (π0, 20 trials)' },
 ];
 
-const Hero = () => {
+// `featured`: the FR5 card only belongs on the home (About) view, not above every section.
+const Hero = ({ featured = true }) => {
   return (
     <section className="pt-12 pb-6 md:pt-16 md:pb-8">
       <div className="portfolio-main px-4 md:px-0">
@@ -35,15 +36,15 @@ const Hero = () => {
           <div>
             <h1 className="page-title text-[var(--text-primary)]">Sreevaatsav Bavana</h1>
             <p className="meta-text mt-1.5">
-              Robot Learning · Multimodal AI · Senior Data Scientist, Penguin AI
+              Robot Learning · Multimodal AI
             </p>
           </div>
         </div>
 
         <p className="text-base md:text-[1.05rem] leading-relaxed text-[var(--text-secondary)] max-w-2xl mb-5">
-          I train vision-language-action policies on a real industrial arm as part of the founding
-          team at SliAct Robotics, and build production multimodal and LLM systems as a Senior Data
-          Scientist at Penguin AI. Gold medalist, B.Tech in Artificial Intelligence.
+          I work on robot learning, training vision-language-action policies that run on a real
+          industrial arm. Before that I worked on multimodal AI and grounded vision-language models.
+          Gold medalist, B.Tech in Artificial Intelligence.
         </p>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
@@ -63,7 +64,7 @@ const Hero = () => {
         </div>
 
         {/* Featured robotics work */}
-        <article className="mt-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-subtle)] overflow-hidden">
+        {featured && <article className="mt-9 rounded-lg border border-[var(--border-color)] bg-[var(--bg-subtle)] overflow-hidden">
           <div className="grid md:grid-cols-5">
             <Link to="/blog/fr5-part-2-policies-and-results" className="md:col-span-2 block bg-black/5">
               <img
@@ -117,7 +118,7 @@ const Hero = () => {
               </p>
             </div>
           </div>
-        </article>
+        </article>}
       </div>
     </section>
   );

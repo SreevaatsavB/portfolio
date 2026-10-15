@@ -112,9 +112,11 @@ const BlogPost = ({ posts }) => {
           <div className="post-byline">
             {post.byline ? <ReactMarkdown>{post.byline}</ReactMarkdown> : <p>{post.author}</p>}
           </div>
-          <p className="meta-text">
-            <time dateTime={post.date?.replace(/-XX$/i, '')}>{formatDate(post.date)}</time>
-          </p>
+          {formatDate(post.date) && formatDate(post.date) !== 'Draft' && (
+            <p className="meta-text">
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
+            </p>
+          )}
         </header>
 
         {seriesSlots.length > 1 && (
