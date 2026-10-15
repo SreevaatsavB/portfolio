@@ -69,7 +69,7 @@ const Hero = () => {
               <img
                 src={process.env.PUBLIC_URL + "/blog/posts/figures/part1/task-sanding.jpg"}
                 alt="The Fairino FR5 holding a metal block against sandpaper"
-                className="w-full h-48 md:h-full object-cover"
+                className="w-full h-48 md:h-full object-cover object-[71%_45%]"
                 loading="lazy"
               />
             </Link>
