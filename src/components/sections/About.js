@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from '../common/SectionTitle';
 import SectionContainer from '../common/SectionContainer';
 import SocialIcons from '../ui/SocialIcons';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -14,7 +15,8 @@ const About = () => {
           <div className="md:col-span-2 min-w-0 stagger-item">
             <h3 className="eyebrow-label mb-4">Quick Info</h3>
             <ul className="space-y-3 mb-9 text-sm">
-              <li className="text-[var(--text-secondary)]">Data Scientist</li>
+              <li className="text-[var(--text-secondary)]">Senior Data Scientist, Penguin AI</li>
+              <li className="text-[var(--text-secondary)]">Founding team, SliAct Robotics</li>
               <li className="text-[var(--text-secondary)]">Hyderabad, Telangana, India</li>
               <li>
                 <a href="mailto:bavanasreevaatsav1@gmail.com" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors break-words">
@@ -63,10 +65,14 @@ const About = () => {
             <div>
               <h3 className="eyebrow-label mb-3">Current Focus</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                Robot learning on a Fairino FR5 cobot: teleoperated data collection, and training
-                ACT, diffusion policy and π0 / π0.5 vision-language-action policies that run on the
-                arm. Alongside that, multimodal AI (models that see, read and reason together) and
-                agentic systems that handle complex, real-world workflows end to end.
+                Robot learning on a Fairino FR5 cobot with SliAct Robotics: teleoperated data collection,
+                and training ACT, Diffusion Policy and π0 / π0.5 vision-language-action policies that run
+                on the arm. I've written up what worked and what didn't in a{' '}
+                <Link to="/blog" className="text-[var(--accent)] hover:opacity-80 transition-opacity">
+                  three-part blog series
+                </Link>
+                . Alongside that, multimodal AI (models that see, read and reason together) and agentic
+                systems that handle complex, real-world workflows end to end.
               </p>
             </div>
           </div>

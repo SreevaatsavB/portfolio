@@ -20,9 +20,10 @@ const Projects = () => {
     {
       id: 0,
       title: "Imitation-Learning Policies on a Fairino FR5 Cobot",
-      description: "Collected 1,021 teleoperated demonstrations (about 11.5 hours) on a 6-DOF Fairino FR5 across three tasks: colour sorting, sanding and pick-to-light, recorded with a wrist-mounted Intel RealSense D405 camera. Built the pipeline that syncs 100 Hz robot logs with 30 Hz camera frames and saves each episode as a LeRobot v3.0 dataset. Trained ACT, diffusion policy and π0 / π0.5 and ran them closed-loop on the arm at 30 Hz. π0 reached 80% on sanding (265 episodes, 4.4 h) and 65% on colour sorting (400 episodes, 5.1 h) over 20 trials each; π0.5 is now training on pick-to-light (356 episodes, 0.8 h). Collaborator: Vivek Kanjarla.",
+      description: "With SliAct Robotics. Collected 1,021 teleoperated demonstrations (about 11.5 hours) on a 6-DOF Fairino FR5 across colour sorting, sanding and pick-to-light, and built the pipeline that turns robot logs and camera video into LeRobot datasets. Trained ACT, Diffusion Policy, Octo and π0 / π0.5 and ran them closed-loop at 30 Hz. Found that a π0 checkpoint with low validation loss did worse than simply not moving; switching to relative joint actions fixed it. π0 reached 80% on sanding and 65% on colour sorting over 20 trials each; π0.5 is now training on pick-to-light. Collaborator: Vivek Kanjarla.",
       category: ["robotics", "ml", "cv"],
-      technologies: ["LeRobot", "PyTorch", "π0 / π0.5", "ACT", "Diffusion Policy", "RealSense", "Fairino SDK"],
+      technologies: ["LeRobot", "PyTorch", "π0 / π0.5", "ACT", "Diffusion Policy", "ROS 2", "RealSense", "Fairino SDK"],
+      blogLink: "/blog",
       period: "Jun 2026 - Present",
       projectLink: PROJECT_LINKS.fr5Policies
     },

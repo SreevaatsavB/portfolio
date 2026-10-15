@@ -1,4 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Arrow = () => (
+  <svg className="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+  </svg>
+);
 
 const ProjectCard = ({ project }) => {
   return (
@@ -24,19 +31,28 @@ const ProjectCard = ({ project }) => {
         ))}
       </div>
 
-      {project.projectLink && (
-        <a
-          href={project.projectLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sm font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"
-        >
-          View project
-          <svg className="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
-      )}
+      <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+        {project.blogLink && (
+          <Link
+            to={project.blogLink}
+            className="inline-flex items-center text-sm font-semibold text-[var(--accent)] hover:opacity-80 transition-opacity"
+          >
+            Read the write-up
+            <Arrow />
+          </Link>
+        )}
+        {project.projectLink && (
+          <a
+            href={project.projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-sm font-medium text-[var(--accent)] hover:opacity-80 transition-opacity"
+          >
+            {project.blogLink ? 'Code' : 'View project'}
+            <Arrow />
+          </a>
+        )}
+      </div>
     </article>
   );
 };

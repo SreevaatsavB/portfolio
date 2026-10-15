@@ -36,10 +36,10 @@ const Research = () => {
 
   // Research interests from resume
   const researchInterests = [
-    "Cross-embodiment learning: training manipulation policies on human videos and other robots' data that still work on a new arm",
-    "Action generation in VLAs: flow-matching action heads for models like π0 and OpenVLA-OFT",
-    "RL fine-tuning of imitation-learned policies, so they improve beyond their demonstrations and recover from their own mistakes",
-    "Language grounding in robot policies: making sure the policy picks the object or slot the instruction actually names"
+    "Long-horizon task planning for contact-rich manipulation, where a policy has to finish a whole sequence of steps and not just one",
+    "Explainable transitions between task steps, so it is clear exactly where a long task failed",
+    "Language grounding in robot policies: making sure the policy picks the object or slot the instruction actually names",
+    "Learning from egocentric video, as a way to collect demonstrations without teleoperating the robot (something I want to explore)"
   ];
 
   return (
