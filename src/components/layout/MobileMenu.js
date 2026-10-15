@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MobileMenu = ({ activeSection, handleNavClick }) => {
   const sections = ['about', 'experience', 'education', 'research', 'projects', 'skills'];
@@ -19,6 +20,9 @@ const MobileMenu = ({ activeSection, handleNavClick }) => {
             {section}
           </button>
         ))}
+        <Link to="/blog" className="py-2.5 text-left text-sm tracking-wide transition-colors text-[var(--text-secondary)]">
+          Blog
+        </Link>
       </nav>
     </div>
   );
