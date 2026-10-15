@@ -56,8 +56,6 @@ We reduced the KL weight to 0.5, ramped it in over 2,000 steps, and added a "fre
 
 The way we worked through this, listing every symptom and looking for one cause that explained all of them, is roughly how we approached every problem after it.
 
-> **[Video 2: ACT rollout, closing the gripper in mid-air]**
-
 ---
 
 ## 3. Inputs that didn't match π0's pretraining format
@@ -169,14 +167,14 @@ That colour-sorting run had no early stopping. Validation loss was lowest at epo
 <!-- TODO(Vaatsav): state what counted as a success for each task and add a short breakdown of how the failures happened (missed grasp, wrong bin, lost contact, etc.). Confirm which checkpoints these came from. -->
 
 ![π0 sanding trial with plots of each joint's commanded position and the position the policy asked for](figures/part2/pi0-sanding-joint-predictions.mp4 "loop")
-*Video 3: π0 sanding, successful trial (scene and wrist cameras on the left, 4× speed). On the right, each joint over the last 6 seconds: the dashed line is the position the policy asked for at each step, and the solid line is the position actually sent to the arm after the controller's speed limit. The gaps are where the control loop paused for a gripper command.*
+*Video 2: π0 sanding, successful trial (scene and wrist cameras on the left, 4× speed). On the right, each joint over the last 6 seconds: the dashed line is the position the policy asked for at each step, and the solid line is the position actually sent to the arm after the controller's speed limit. The gaps are where the control loop paused for a gripper command.*
 
 ![π0 picking up a cream, a blue and a brown block in turn and placing each in the dark tray](figures/part2/colour-sorting-success.mp4 "loop")
 ![π0 placing a red packet in the dark tray, then failing to grasp a computer mouse several times](figures/part2/colour-sorting-failure.mp4 "loop")
-*Video 4: π0 colour sorting (scene camera, 4× speed). Left: picking up a cream, a blue and a brown block in turn and placing each in the dark tray. Right: placing a red packet, then failing to grasp a computer mouse several times.*
+*Video 3: π0 colour sorting (scene camera, 4× speed). Left: picking up a cream, a blue and a brown block in turn and placing each in the dark tray. Right: placing a red packet, then failing to grasp a computer mouse several times.*
 
 ![Six colour-sorting trials playing side by side, each with different objects](figures/part2/colour-sorting-six-trials.mp4 "loop")
-*Video 5: The first minute of six colour-sorting trials with different objects and target trays (4× speed).*
+*Video 4: The first minute of six colour-sorting trials with different objects and target trays (4× speed).*
 
 I expected sanding to be the harder task because of the contact involved, but it scored higher. My guess is that sanding is a single repeated motion with one instruction, while colour sorting needs the model to match nine instructions to the right objects and bins using only single images. For colour sorting, choosing the right action seems to be harder than executing it.
 
