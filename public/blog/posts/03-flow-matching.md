@@ -17,13 +17,13 @@ summary: "My study notes on flow matching, written up: how probability moves lik
 
 ## Abstract
 
-The π0 policy in [Part 2](./fr5-part-2-policies-and-results) doesn't predict actions directly. It starts with random noise and nudges it, step by step, until the noise becomes a chunk of robot actions. The method behind this is called flow matching [1]. I was fine-tuning π0 without really understanding this part, so between April and July 2026 I worked through it on paper, starting from basic fluid mechanics. This post is a cleaned-up version of those notes, plus a small experiment where I trained four related models on toy data to see the differences for myself. The figures with handwriting are taken from my notes. None of this is new research; it's me learning how the thing I was using works.
+The π0 policy in [Part 2](./fr5-part-2-policies-and-results) doesn't predict actions directly. It starts with random noise and nudges it, step by step, until the noise becomes a chunk of robot actions. The method behind this is called flow matching [1]. I was fine-tuning π0 without really understanding this part, so between April and July 2026 I worked through it on paper, starting from basic fluid mechanics. This post is a cleaned-up version of those notes, plus a small experiment where I trained four related models on toy data to see the differences for myself. The figures with handwriting are taken from my notes, and the [full notes](https://drive.google.com/file/d/1DdxDHoI8O3pMmKbs-rLw_dxHNOTk3dWV/view?usp=sharing) are on Google Drive. None of this is new research; it's me learning how the thing I was using works.
 
 ---
 
 ## How I learned this
 
-Most of this came from other people's explanations. The one that helped me most was Julia Turc's video [*The physics behind Flow Matching models*](https://www.youtube.com/watch?v=3mFNpeJQjmw) [7], one of the best explanations I've come across. I also read Peter Roelants' [*Flow Matching: A visual introduction*](https://peterroelants.github.io/posts/flow_matching_intro/) [8] and the Cambridge Machine Learning Group's [*An introduction to Flow Matching*](https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html) [9], along with other videos and posts on diffusion policies and flow matching. The handwritten notes in the figures are me working through these sources.
+Most of this came from other people's explanations. The one that helped me most was Julia Turc's video [*The physics behind Flow Matching models*](https://www.youtube.com/watch?v=3mFNpeJQjmw) [7], one of the best explanations I've come across. I also read Peter Roelants' [*Flow Matching: A visual introduction*](https://peterroelants.github.io/posts/flow_matching_intro/) [8] and the Cambridge Machine Learning Group's [*An introduction to Flow Matching*](https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html) [9], along with other videos and posts on diffusion policies and flow matching. The handwritten notes in the figures are me working through these sources; the [full set of notes](https://drive.google.com/file/d/1DdxDHoI8O3pMmKbs-rLw_dxHNOTk3dWV/view?usp=sharing) (PDF) is on Google Drive.
 
 ---
 

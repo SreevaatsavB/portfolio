@@ -111,6 +111,17 @@ const Hero = ({ featured = true }) => {
                 ))}
               </ol>
 
+              <p className="text-sm mb-4">
+                <a
+                  href="https://drive.google.com/file/d/1DdxDHoI8O3pMmKbs-rLw_dxHNOTk3dWV/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--accent)] hover:opacity-80 transition-opacity"
+                >
+                  My handwritten flow-matching notes (PDF) ↗
+                </a>
+              </p>
+
               <p className="text-xs leading-relaxed text-[var(--text-muted)]">
                 <span className="font-semibold text-[var(--text-secondary)]">Now:</span> collecting
                 data for screwing, a custom handheld gripper for data collection is on the way, and
