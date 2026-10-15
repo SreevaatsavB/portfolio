@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
 import ThemeToggle from '../ui/ThemeToggle';
 
+// Shared by the portfolio and the blog. On the blog there is no section state,
+// so a section click goes back to the portfolio and opens that section there.
 const Header = ({ activeSection, setActiveSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const onBlog = useLocation().pathname.startsWith('/blog');
   const sections = ['about', 'experience', 'education', 'research', 'projects', 'skills'];
+  if (onBlog) activeSection = null;
 
   const handleNavClick = (section) => {
-    setActiveSection(section);
+    if (setActiveSection) setActiveSection(section);
+    else navigate('/', { state: { section } });
     setMenuOpen(false);
   };
 
@@ -16,13 +22,18 @@ const Header = ({ activeSection, setActiveSection }) => {
     <header className="bg-[var(--bg-subtle)] sticky top-0 z-50 border-b border-[var(--border-color)]">
       <div className="portfolio-main px-4 md:px-0 py-6">
         <div className="flex justify-between items-center gap-6">
-          <h1 className="text-xl md:text-2xl font-serif tracking-tight whitespace-nowrap" style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}>
+          <Link
+            to="/"
+            onClick={() => setActiveSection && setActiveSection('about')}
+            className="text-xl md:text-2xl font-serif tracking-tight whitespace-nowrap"
+            style={{ fontFamily: "'Source Serif 4', Georgia, serif" }}
+          >
             <span className="text-[var(--text-primary)]">Sreevaatsav</span>{' '}
             <span className="text-[var(--accent)]">B</span>
-          </h1>
+          </Link>
           <div className="flex items-center gap-1 md:gap-5">
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-5">
+            <nav className="hidden md:flex items-center gap-4">
               {sections.map((section) => (
                 <button
                   key={section}
@@ -38,7 +49,12 @@ const Header = ({ activeSection, setActiveSection }) => {
               ))}
               <Link
                 to="/blog"
-                className="text-sm uppercase tracking-[0.06em] font-medium capitalize transition-colors pb-0.5 border-b-2 text-[var(--text-muted)] border-transparent hover:text-[var(--text-primary)]"
+                aria-current={onBlog ? 'page' : undefined}
+                className={`text-sm uppercase tracking-[0.06em] font-medium capitalize transition-colors pb-0.5 border-b-2 ${
+                  onBlog
+                    ? 'text-[var(--accent)] border-[var(--accent)]'
+                    : 'text-[var(--text-muted)] border-transparent hover:text-[var(--text-primary)]'
+                }`}
               >
                 Blog
               </Link>
@@ -63,6 +79,7 @@ const Header = ({ activeSection, setActiveSection }) => {
           <MobileMenu
             activeSection={activeSection}
             handleNavClick={handleNavClick}
+            onBlog={onBlog}
           />
         )}
       </div>

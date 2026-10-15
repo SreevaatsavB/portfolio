@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from './context/ThemeContext';
 
@@ -19,7 +20,8 @@ import Hobbies from './components/sections/Hobbies';
 
 const Portfolio = () => {
   const { darkMode } = useTheme();
-  const [activeSection, setActiveSection] = useState('about');
+  // The blog's header links back here with the section to open.
+  const [activeSection, setActiveSection] = useState(useLocation().state?.section || 'about');
 
   return (
     <div className={`portfolio-shell relative ${darkMode ? 'theme-dark' : 'theme-light'}`}>
@@ -30,7 +32,7 @@ const Portfolio = () => {
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
 
       {/* Hero section - hidden when Creative section is active */}
-      {activeSection !== 'hobbies' && <Hero />}
+      {activeSection !== 'hobbies' && <Hero featured={activeSection === 'about'} />}
 
       {/* Main Content */}
       <main className="portfolio-main px-4 md:px-0 pt-14 pb-10 md:pt-16 md:pb-12 relative z-10">
