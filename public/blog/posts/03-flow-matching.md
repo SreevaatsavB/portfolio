@@ -17,7 +17,7 @@ summary: "My study notes on flow matching, written up: how probability moves lik
 
 ## Abstract
 
-The π0 policy in [Part 2](./fr5-part-2-policies-and-results) doesn't predict actions directly. It starts with random noise and nudges it, step by step, until the noise becomes a chunk of robot actions. The method behind this is called flow matching [1]. I was fine-tuning π0 without really understanding this part, so between April and July 2026 I worked through it on paper, starting from basic fluid mechanics. This post is a cleaned-up version of those notes, plus a small experiment where I trained four related models on toy data to see the differences for myself. The figures with handwriting are taken from my notes, and the [full notes](https://drive.google.com/file/d/1DdxDHoI8O3pMmKbs-rLw_dxHNOTk3dWV/view?usp=sharing) are on Google Drive. None of this is new research; it's me learning how the thing I was using works.
+The π0 policy in [Part 2](./fr5-part-2-policies-and-results) doesn't predict actions directly. It starts with random noise and nudges it, step by step, until the noise becomes a chunk of robot actions. The method behind this is called flow matching [1]. I had already worked through flow matching on paper between April and July 2026, before fine-tuning π0, starting from basic fluid mechanics. This post is a cleaned-up version of those notes, plus a small experiment where I trained four related models on toy data and compared them. The figures with handwriting are taken from my notes, and the [full notes](https://drive.google.com/file/d/1DdxDHoI8O3pMmKbs-rLw_dxHNOTk3dWV/view?usp=sharing) are on Google Drive. None of this is new research; these are my notes on the method π0 is built on.
 
 ---
 
@@ -248,7 +248,7 @@ The individual lines are straight, but because noise and data are paired at rand
 
 ## 5. Trying it on toy data
 
-To see these differences for myself, I trained all four models on two datasets: *two moons* (a 2-D toy dataset shaped like two interlocking crescents) and MNIST (28×28 handwritten digits). CNF, flow matching and rectified flow used the same velocity network on each dataset (a small MLP for moons and a U-Net for MNIST), so the main difference was the training recipe. Real NVP can't use a free-form network, so it has its own coupling-layer architecture. Everything ran on my MacBook (Apple M3 Pro GPU).
+To compare them directly, I trained all four models on two datasets: *two moons* (a 2-D toy dataset shaped like two interlocking crescents) and MNIST (28×28 handwritten digits). CNF, flow matching and rectified flow used the same velocity network on each dataset (a small MLP for moons and a U-Net for MNIST), so the main difference was the training recipe. Real NVP can't use a free-form network, so it has its own coupling-layer architecture. Everything ran on my MacBook (Apple M3 Pro GPU).
 
 | method | dataset | ms per training step | peak memory (MiB) | total training (s) | network calls per sample | ms per sample |
 |---|---|---|---|---|---|---|
