@@ -180,11 +180,11 @@ I expected sanding to be the harder task because of the contact involved, but it
 
 This connects to the biggest limitation of our setup. π0 sees only the current frame, and our instructions describe a whole episode, 46 seconds on average for colour sorting, while π0 was pretrained on instructions for roughly 2-second segments. In a long task with several stages, one frame and one sentence often don't make it clear which stage the robot is in.
 
-We ran into this directly when we tried chaining tasks. We put a GPT model on top of our fine-tuned policies as a planner and critic, to decide which sub-task to run next and to check whether each one had worked. Across runs of pick-and-place followed by sanding, the sequencing worked every time, but the sanding itself often failed: the block wasn't pressed properly onto the sandpaper, and neither the planner nor the policy noticed, because nothing in the system could sense contact force. Vision alone wasn't enough for that. Getting a single task to work and getting a whole sequence of tasks to finish turned out to be two very different problems, and that gap is what I'd most like to work on next.
+We ran into this directly when we tried chaining tasks. We put a VLM (Sonnet 5.5, and GPT-6.1 in other runs) on top of our fine-tuned policies as a planner and critic, to decide which sub-task to run next and to check whether each one had worked. Across runs of pick-and-place followed by sanding, the sequencing worked every time, but the sanding itself often failed: the block wasn't pressed properly onto the sandpaper, and neither the planner nor the policy noticed, because nothing in the system could sense contact force. Vision alone wasn't enough for that. Getting a single task to work and getting a whole sequence of tasks to finish turned out to be two very different problems, and that gap is what I'd most like to work on next.
 
 More generally, these policies can reproduce the motions in the demonstrations, but they have no sense of force or touch. In some sanding trials the policy held the block just above the sandpaper, going through the right motion without actually touching it. Right now the wrist camera is the only thing that tells the policy whether there is contact. The D405 on the wrist also records depth, which would give the policy another view of how close the block is to the sandpaper, but we skipped it for now.
 
-<!-- TODO(Vaatsav): confirm the exact GPT model name you used as planner/critic and roughly how many chained runs you did. -->
+<!-- TODO(Vaatsav): roughly how many chained runs did you do? -->
 
 ---
 
