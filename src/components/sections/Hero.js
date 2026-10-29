@@ -123,9 +123,9 @@ const Hero = ({ featured = true }) => {
               </p>
 
               <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-                <span className="font-semibold text-[var(--text-secondary)]">Now:</span> collecting
-                data for screwing, a custom handheld gripper for data collection is on the way, and
-                I'm adapting XR-1 to our datasets.
+                <span className="font-semibold text-[var(--text-secondary)]">Now:</span> adding a
+                force/torque sensor and trying RL post-training with human corrections for sanding and
+                screwing, and adapting XR-1 to our datasets.
               </p>
             </div>
           </div>

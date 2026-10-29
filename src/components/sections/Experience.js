@@ -11,11 +11,11 @@ const Experience = () => {
       company: 'Penguin AI',
       companyUrl: 'https://www.penguinai.co/',
       period: 'May 2026 - Present',
-      skills: ['ML System Design', 'Agents at Scale', 'Cost Optimization', 'Data Driven Development'],
+      skills: ['LangGraph', 'AWS Bedrock', 'Agents at Scale', 'Self-Consistency', 'Human-AI Agreement'],
       details: [
-        'Building end-to-end LLM-based agent pipelines for healthcare workflows, incorporating live production user feedback for self-improving, data-driven agent development.',
-        'Leading AI governance efforts: compliance, bias mitigation, and safety alignment across deployed systems.',
-        'Designing ML system architecture for cost optimization and scalability of agent infrastructure in production.'
+        'Lead the AI module of a prior-authorization agent system for a large US health plan, built with LangGraph and AWS Bedrock. It has processed 18,500+ cases across 110 clinical guidelines with 99.4% pipeline success and a 4.4-minute median latency.',
+        'Built a guideline selector based on self-consistency sampling that corrected 830 of 1,185 audited routing decisions. With this and other accuracy fixes, agreement between the AI and human reviewers rose from 31% to 67% per procedure line in four months (Orthopedics: 47% to 77%), and unsafe approvals stayed under 1%.',
+        'Helped raise turnaround-time compliance from 44% to 92% and cut reviewer time per line by nearly 40% (4.4 to 2.8 min) across 41 clinical reviewers.'
       ],
       companyTrack: 'awone-penguin'
     },
@@ -24,12 +24,11 @@ const Experience = () => {
       role: 'Data Scientist',
       company: 'Penguin AI',
       companyUrl: 'https://www.penguinai.co/',
-      period: 'June 2025 - May 2026',
-      skills: ['Multi Agent workflows', 'MLOps'],
+      period: 'Jul 2025 - May 2026',
+      skills: ['LightGBM', 'XGBoost', 'MLflow', 'MLOps', 'Agentic Workflows'],
       details: [
-        'Built production-grade LLM workflow systems to automate prior authorization, reducing medical nurse review time by approximately 30-40% with around 80-85% accuracy; currently improving the system with a HITL workflow.',
-        'Working on applied research methodologies to enhance automated medical coding.',
-        'Developed an ML system for appeal denial prediction directly from customer data sources, with a corresponding ETL pipeline.'
+        'Built a claim-denial prediction system end to end, from per-client ETL to a LightGBM and XGBoost ensemble trained with MLflow, with PSI drift alerts and periodic retraining. It reached 0.87 AUC and caught 92% of denials on 18,823 held-out claims.',
+        'Built an LLM agentic workflow that turns payer medical-policy PDFs into questionnaire trees. It scored higher question F1 than the existing drafts (0.64 vs 0.60), at $0.30 to $0.60 and 5 to 10 minutes per policy.'
       ],
       companyTrack: 'awone-penguin'
     },
@@ -38,12 +37,13 @@ const Experience = () => {
       role: 'Associate Data Scientist',
       company: 'Awone AI',
       companyUrl: 'https://awone.ai',
-      period: 'Jun 2024 - June 2025',
-      skills: ['LLMs', 'VLMs', 'Machine Learning'],
+      period: 'Jul 2024 - Jun 2025',
+      skills: ['LLMs', 'VLMs', 'Inference Optimization', 'MCP'],
       details: [
-        'Developed an end-to-end interruptible voice chat application with open-source components with MCP client-server for a user database.',
-        'Improved the inference speed of production LLMs by 15% by quantization and developing speculative decoding n-gram head.',
-        'Built and deployed a BERT-based NER model for healthcare PII redaction using a custom loss function.'
+        'Made production LLM inference 15% faster with quantization and an n-gram speculative decoding head.',
+        'Built a medical PII redaction system that combined a BERT NER model, trained with a custom loss, with document vision-language models. It redacted correctly 90% of the time, against 60-70% for standard tools.',
+        'Trained document vision-language models to fill in forms automatically, with 82% accuracy on forms they had not seen before.',
+        'Built a voice chat app from open-source components that users can interrupt mid-reply, plus an MCP client and server for querying a user database.'
       ],
       companyTrack: 'awone-penguin'
     },
@@ -55,9 +55,9 @@ const Experience = () => {
       period: 'Jan 2024 - Jun 2024',
       skills: ['LLMs', 'Transformers', 'Inference Optimization', 'GenAI'],
       details: [
-        'Developed a strong foundation in LLMs and transformers by coding state-of-the-art models like Llama-2 and Mistral from scratch, focusing on architectures, attention mechanisms, and optimizations.',
-        'Experimented with several LLM optimization and quantization techniques, helping to reduce latency on development platform.',
-        'Finetuned task-specific SLMs for medical-insurance related tasks.'
+        'Re-implemented Llama-2, Mistral, Qwen2 and LLaVA from scratch to understand their architectures and attention.',
+        'Explored generative and multimodal models, including diffusion models built from scratch, Stable Diffusion 3, speech LLMs that output audio, and PaliGemma.',
+        'Studied ways to speed up LLM inference, such as speculative decoding with n-gram and Medusa heads, KV caching, FlashAttention and quantization.'
       ],
       companyTrack: 'awone-penguin'
     },

@@ -4,20 +4,27 @@ import SectionContainer from '../common/SectionContainer';
 
 const Education = () => {
   const keyCourses = [
-    "Data Structures and Algorithms",
-    "Linear Algebra",
-    "Probability and Statistics",
-    "Optimization Techniques in AI",
-    "DBMS",
-    "Machine and Deep Learning",
-    "Natural Language Processing",
-    "Reinforcement Learning"
+    "Introduction to Robotics",
+    "Control Theory",
+    "Reinforcement Learning and Autonomous Systems",
+    "Signals & Systems",
+    "Neural Networks and Deep Learning",
+    "Machine Learning and Python",
+    "Optimization Techniques for AI",
+    "Data Structures"
   ];
 
   const achievements = [
     "Cumulative GPA: 8.76",
     "4 years consecutive merit scholarship (2020-2024)",
     "Top 5% of the class consistently",
+    "3rd place, ICETCI Hackathon 2023",
+    "Rank 111 of 4,000+ teams, Amazon ML Challenge 2023",
+  ];
+
+  const certifications = [
+    "Modern Robotics, Course 1: Foundations of Robot Motion (Northwestern University, Coursera), Apr 2026, grade 98.46%",
+    "Modern Robotics, Course 2: Robot Kinematics (Northwestern University, Coursera), in progress",
   ];
 
   return (
@@ -72,10 +79,19 @@ const Education = () => {
 
           {/* Academic Achievements */}
           <div className="mt-6">
-            <h4 className="eyebrow-label mb-3">Academic Achievements</h4>
+            <h4 className="eyebrow-label mb-3">Achievements</h4>
             <ul className="list-disc pl-5 space-y-1 text-[var(--text-secondary)]">
               {achievements.map((achievement) => (
                 <li key={achievement}>{achievement}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-6">
+            <h4 className="eyebrow-label mb-3">Courses & Certifications</h4>
+            <ul className="list-disc pl-5 space-y-1 text-[var(--text-secondary)]">
+              {certifications.map((cert) => (
+                <li key={cert}>{cert}</li>
               ))}
             </ul>
           </div>

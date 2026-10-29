@@ -15,7 +15,7 @@ const About = () => {
             <h3 className="eyebrow-label mb-4">Quick Info</h3>
             <ul className="space-y-3 mb-9 text-sm">
               <li className="text-[var(--text-secondary)]">Senior Data Scientist, Penguin AI</li>
-              <li className="text-[var(--text-secondary)]">Founding team, SliAct Robotics</li>
+              <li className="text-[var(--text-secondary)]">Founding Engineer, Sliact Robotics</li>
               <li className="text-[var(--text-secondary)]">Hyderabad, Telangana, India</li>
               <li>
                 <a href="mailto:bavanasreevaatsav1@gmail.com" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors break-words">
@@ -39,9 +39,9 @@ const About = () => {
             <div className="mb-7">
               <h3 className="eyebrow-label mb-3">Bio</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                I build production AI systems that work at scale, from multimodal models to agentic
-                pipelines. Over the past year my focus has moved towards robot learning, training
-                imitation-learning policies that run on a real 6-DOF cobot.
+                I build production AI systems at scale, mainly multimodal models and agentic pipelines.
+                More recently I've been working on robot learning, training policies for real-world
+                manipulation.
               </p>
             </div>
 
