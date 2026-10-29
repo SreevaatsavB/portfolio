@@ -44,7 +44,7 @@ const Education = () => {
           </p>
 
           <p className="text-[var(--text-secondary)] mb-1">
-            Gold medalist in BTech AI for the class of 2020
+            Gold medalist of the 2020–2024 BTech AI batch
           </p>
 
           {/* Gold Medal Photo */}
