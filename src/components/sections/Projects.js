@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       id: 1,
-      title: "GIV-CXR: Grounded, Interpretable Chest X-Ray Question Answering",
+      title: "GIV-CXR: Grounded, Interpretable Chest X-ray Question Answering",
       description: "Built a chest X-ray question-answering benchmark with 355,293 question-answer pairs, each tied to bounding boxes across 36 anatomical regions, to test spatial reasoning (VLaNC Lab, Mahindra University, with IIIT Hyderabad). Set up a hallucination filter combining automatic checks with radiologist review (82.4% acceptance). The best grounded VLM baseline reached 68.1 mIoU on spatial grounding, nearly double GPT-4o-mini's 39.0, and the top G-Eval answer score (3.98).",
       category: ["cv", "llm"],
       technologies: ["HuggingFace", "PyTorch", "AWS EC2"],

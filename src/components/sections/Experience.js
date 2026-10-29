@@ -13,7 +13,7 @@ const Experience = () => {
       period: 'May 2026 - Present',
       skills: ['LangGraph', 'AWS Bedrock', 'Agents at Scale', 'Self-Consistency', 'Human-AI Agreement'],
       details: [
-        'Lead the AI module of a prior-authorization agent system for a large US health plan, built with LangGraph and AWS Bedrock. It has processed 18,500+ cases across 110 clinical guidelines with 99.4% pipeline success and a 4.4-minute median latency.',
+        'Lead the AI module of a prior-authorization agent system for a large US health plan (LangGraph, AWS Bedrock) that turns clinical guidelines into questionnaire trees, judges each atomic criterion as met or not met from patient records, and rolls the answers up to a decision. Processed 18,500+ cases across 110 guidelines with 99.4% pipeline success and a 4.4-minute median latency.',
         'Built a guideline selector based on self-consistency sampling that corrected 830 of 1,185 audited routing decisions. With this and other accuracy fixes, agreement between the AI and human reviewers rose from 31% to 67% per procedure line in four months (Orthopedics: 47% to 77%), and unsafe approvals stayed under 1%.',
         'Helped raise turnaround-time compliance from 44% to 92% and cut reviewer time per line by nearly 40% (4.4 to 2.8 min) across 41 clinical reviewers.'
       ],
@@ -63,14 +63,13 @@ const Experience = () => {
     },
     {
       id: 5,
-      role: 'Research Intern',
+      role: 'Summer Research Intern (Supervisor: Dr. Nidhi Goyal)',
       company: 'Mahindra University',
       companyUrl: 'https://www.mahindrauniversity.edu.in',
       period: 'Jul 2023 - Sept 2023',
       skills: ['Research', 'Video Summarization', 'Data Analysis'],
       details: [
-        'Collaborated with a four-person team to conduct a thorough research survey on video summarization techniques.',
-        'Co-authored a survey paper published in the ACMMM Workshop 2023.'
+        'Surveyed video summarization methods with a four-person team, in collaboration with a researcher from the National University of Singapore (NUS). The survey was published at the NarSUM workshop, ACM MM 2023.'
       ],
       companyTrack: null
     }

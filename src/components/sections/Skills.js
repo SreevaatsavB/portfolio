@@ -14,7 +14,7 @@ const Skills = () => {
     },
     {
       category: "AI Engineering & Infrastructure",
-      skills: ["LangChain", "LangGraph", "Langfuse", "MCP", "VLLM", "MLFlow", "SLURM", "Ray"]
+      skills: ["LangChain", "LangGraph", "Langfuse", "MCP", "VLLM", "ONNX", "MLFlow", "SLURM", "Ray"]
     },
     {
       category: "Cloud & Deployment",

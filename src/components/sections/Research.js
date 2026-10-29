@@ -8,10 +8,9 @@ const Research = () => {
   const publications = [
     {
       id: 1,
-      title: "GIV-CXR: Densely Grounded, Visually Interpretable, Chest X-Ray Question Answering Dataset",
+      title: "GIV-CXR: Densely Grounded, Visually Interpretable Chest X-ray Question Answering Dataset",
       authors: "Sreevaatsav Bavana, Adit Rushil Potta, Sai Amrit Patnaik, Nidhi Goyal",
-      conference: "MedReasoner Workshop at CVPR 2026",
-      year: "2026",
+      conference: "Workshop on Medical Reasoning with Vision Language Foundation Models (MedReasoner), CVPR 2026, IEEE/CVF",
       status: "Accepted",
       link: PUBLICATION_LINKS.givCXR
     },
@@ -19,8 +18,7 @@ const Research = () => {
       id: 3,
       title: "From Layoff to Reemployment: Analyzing Social Media Narratives",
       authors: "Yayati Gupta, Sreevaatsav Bavana, Sudhira Chegu, Sujith Sai Kalakonda, Yash Mathur, Manmitha Polsani, and Sanatan Sukhija",
-      conference: "CSoNet 2025",
-      year: "2025",
+      conference: "International Conference on Computational Data and Social Networks, CSoNet 2025, Springer LNCS",
       status: "Accepted",
       link: PUBLICATION_LINKS.layoffToReemploymentAcceptance
     },
@@ -28,8 +26,7 @@ const Research = () => {
       id: 2,
       title: "A Systematic Study on Video Summarization: Approaches, Challenges, and Future Directions",
       authors: "Kajal Kansal, Nikita Kansal, Sreevaatsav Bavana, Bodla Krishna Vamshi, Nidhi Goyal",
-      conference: "Proceedings of the 2nd Workshop on User-centric Narrative Summarization of Long Videos",
-      year: "2023",
+      conference: "Workshop on User-centric Narrative Summarization of Long Videos (NarSUM), ACM MM 2023, ACM",
       link: PUBLICATION_LINKS.videoSummarizationStudy
     }
   ];
@@ -58,7 +55,7 @@ const Research = () => {
               </p>
 
               <p className="text-[0.85rem] text-[var(--text-muted)] italic mb-2">
-                {pub.conference}, {pub.year}
+                {pub.conference}
                 {pub.status?.toLowerCase() === 'submitted' && (
                   <span className="ui-badge not-italic ml-2">
                     {pub.status}
