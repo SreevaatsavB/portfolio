@@ -26,7 +26,7 @@ const Skills = () => {
     },
     {
       category: "Robotics & Simulation",
-      skills: ["ROS 2", "LeRobot", "Fairino SDK", "SO-101", "RealSense", "MuJoCo", "CoppeliaSim"]
+      skills: ["ROS 2", "LeRobot", "Fairino SDK", "MuJoCo", "CoppeliaSim"]
     }
   ];
 
