@@ -184,6 +184,11 @@ We ran into this directly when we tried chaining tasks. We put a VLM (Sonnet 5.5
 
 More generally, these policies can reproduce the motions in the demonstrations, but they have no sense of force or touch. In some sanding trials the policy held the block just above the sandpaper, going through the right motion without actually touching it. Right now the wrist camera is the only thing that tells the policy whether there is contact. The D405 on the wrist also records depth, which would give the policy another view of how close the block is to the sandpaper, but we skipped it for now.
 
+At the end of October 2026, Vivek mounted a 6-axis force/torque sensor (Fairino GZCX-6F-75B) between the FR5's flange and the gripper, and connected it to the robot over an RS-485 bus. It measures forces up to 100 N and torques up to 5 Nm along all three axes. This gives the planner, and later the policy, a direct signal for whether the block is actually pressed onto the sandpaper. We haven't trained or evaluated anything with it yet.
+
+![A 6-axis force/torque sensor mounted between the FR5's flange and the gripper, with its cable running to the arm](figures/part2/ft-sensor.jpg)
+*Figure 4: The force/torque sensor fitted between the FR5's flange and the gripper.*
+
 <!-- TODO(Vaatsav): roughly how many chained runs did you do? -->
 
 ---
@@ -201,7 +206,7 @@ More generally, these policies can reproduce the motions in the demonstrations, 
 
 - Finish training π0.5 on pick-to-light.
 - Post-train XR-1 [6] on the same data (the conversion and training setup are done), and try a video action model.
-- Improve the planner and critic setup from §7 for multi-step tasks, and find a way to detect contact failures like the sanding one.
+- Improve the planner and critic setup from §7 for multi-step tasks, and use the force/torque readings to detect contact failures like the sanding one.
 - Collect data with UMI grippers instead of teleoperation, since teleoperated episodes are slow to record and a single mistake means redoing the whole episode.
 
 [Part 3](./fr5-part-3-flow-matching) covers the maths of flow matching, which is how π0's action expert generates actions.
