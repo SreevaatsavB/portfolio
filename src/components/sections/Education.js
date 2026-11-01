@@ -22,11 +22,6 @@ const Education = () => {
     "Rank 111 of 4,000+ teams, Amazon ML Challenge 2023",
   ];
 
-  const certifications = [
-    "Modern Robotics, Course 1: Foundations of Robot Motion (Northwestern University, Coursera), Apr 2026, grade 98.46%",
-    "Modern Robotics, Course 2: Robot Kinematics (Northwestern University, Coursera), in progress",
-  ];
-
   return (
     <section className="content-section stagger-group">
       <SectionTitle title="Education" />
@@ -83,15 +78,6 @@ const Education = () => {
             <ul className="list-disc pl-5 space-y-1 text-[var(--text-secondary)]">
               {achievements.map((achievement) => (
                 <li key={achievement}>{achievement}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="mt-6">
-            <h4 className="eyebrow-label mb-3">Courses & Certifications</h4>
-            <ul className="list-disc pl-5 space-y-1 text-[var(--text-secondary)]">
-              {certifications.map((cert) => (
-                <li key={cert}>{cert}</li>
               ))}
             </ul>
           </div>

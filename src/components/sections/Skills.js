@@ -30,6 +30,11 @@ const Skills = () => {
     }
   ];
 
+  const certifications = [
+    "Modern Robotics, Course 1: Foundations of Robot Motion (Northwestern University, Coursera), Apr 2026, grade 98.46%",
+    "Modern Robotics, Course 2: Robot Kinematics (Northwestern University, Coursera), in progress",
+  ];
+
   return (
     <section className="content-section stagger-group">
       <SectionTitle title="Skills" />
@@ -50,6 +55,15 @@ const Skills = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 pt-6 border-t border-[var(--border-color)] stagger-item">
+          <h3 className="eyebrow-label mb-3">Courses & Certifications</h3>
+          <ul className="list-disc pl-5 space-y-1.5 text-[var(--text-secondary)]">
+            {certifications.map((cert) => (
+              <li key={cert}>{cert}</li>
+            ))}
+          </ul>
         </div>
       </SectionContainer>
     </section>
