@@ -4,7 +4,7 @@ slug: fr5-part-1-setup-and-data
 series: "Imitation Learning on a Fairino FR5"
 part: 1
 author: Sreevaatsav B
-date: 2026-10-XX
+date: 2026-10-15
 tags: [robotics, imitation-learning, teleoperation, lerobot, datasets]
 summary: "How we set up teleoperation and recording on a 6-DOF industrial cobot, and what we learned from collecting about 1,000 demonstrations across three tasks."
 ---

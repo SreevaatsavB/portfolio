@@ -4,7 +4,7 @@ slug: fr5-part-2-policies-and-results
 series: "Imitation Learning on a Fairino FR5"
 part: 2
 author: Sreevaatsav B
-date: 2026-10-XX
+date: 2026-10-15
 tags: [robotics, imitation-learning, vla, pi0, act, debugging, evaluation]
 summary: "What went wrong while training robot policies on a Fairino FR5, how we found each problem, and what finally worked."
 ---

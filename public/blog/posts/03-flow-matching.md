@@ -4,7 +4,7 @@ slug: fr5-part-3-flow-matching
 series: "Imitation Learning on a Fairino FR5"
 part: 3
 author: Sreevaatsav B
-date: 2026-10-XX
+date: 2026-10-15
 tags: [flow-matching, generative-models, normalizing-flows, vla, robotics]
 summary: "My study notes on flow matching, written up: how probability moves like a fluid, why older flow models were slow to train, how flow matching fixes that, a small comparison I ran on toy data, and how a robot policy uses it to produce actions."
 ---
