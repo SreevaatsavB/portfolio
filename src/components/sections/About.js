@@ -15,7 +15,12 @@ const About = () => {
             <h3 className="eyebrow-label mb-4">Quick Info</h3>
             <ul className="space-y-3 mb-9 text-sm">
               <li className="text-[var(--text-secondary)]">Senior Data Scientist, Penguin AI</li>
-              <li className="text-[var(--text-secondary)]">Founding Engineer, Sliact Robotics</li>
+              <li className="text-[var(--text-secondary)]">
+                Founding Engineer,{' '}
+                <a href="https://sliact.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">
+                  Sliact Robotics
+                </a>
+              </li>
               <li className="text-[var(--text-secondary)]">Hyderabad, Telangana, India</li>
               <li>
                 <a href="mailto:bavanasreevaatsav1@gmail.com" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors break-words">

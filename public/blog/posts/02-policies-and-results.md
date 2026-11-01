@@ -11,7 +11,7 @@ summary: "What went wrong while training robot policies on a Fairino FR5, how we
 
 # Teaching a Fairino FR5 from Demonstrations, Part 2: Why Pretrained Policies Failed on Our Robot, and What Fine-Tuning Fixed
 
-**Sreevaatsav B** · with Vivek Kanjarla · SliAct Robotics
+**Sreevaatsav B** · with Vivek Kanjarla · [Sliact Robotics](https://sliact.com/)
 
 ---
 

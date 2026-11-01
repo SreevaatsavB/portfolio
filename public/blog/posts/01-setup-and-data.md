@@ -11,7 +11,7 @@ summary: "How we set up teleoperation and recording on a 6-DOF industrial cobot,
 
 # Teaching a Fairino FR5 from Demonstrations, Part 1: Hardware, Teleoperation and Data
 
-**Sreevaatsav B** · with Vivek Kanjarla · SliAct Robotics
+**Sreevaatsav B** · with Vivek Kanjarla · [Sliact Robotics](https://sliact.com/)
 
 ---
 
