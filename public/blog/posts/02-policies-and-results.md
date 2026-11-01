@@ -86,14 +86,14 @@ From Part 1: the arm moves about 0.06° per frame, but the model was predicting 
 | trained π0 | 1.656° |
 | always predict the dataset's average action | 9.775° |
 
-So the model is about 6 times better than guessing the average, which means it had learned the rough shape of the motion. But it's about 22 times worse than not moving at all, and its error is many times larger than the motion it is supposed to produce. The robot logs were consistent with this:
+π0's error was about 6 times smaller than always guessing the average, so it had picked up the rough shape of the motion. But it was about 22 times larger than just holding still, and much bigger than the movement the arm was supposed to make in each step. What we saw on the robot matched this:
 
-| on the robot | explanation |
+| what we saw on the robot | what it means |
 |---|---|
-| median commanded step of 2.44°, 13 times the demonstrations' 0.187° | mostly model error, not intended motion |
-| our 1° per step safety limit was hit on 65% of commands | expected at that speed |
-| gripper output never went above 0.154 in 450 steps (closing needs 0.65) | the gripper prediction was just as noisy |
-| fine for about 100 steps, then drifting | errors building up from the start |
+| the median commanded step was 2.44°, 13 times the 0.187° in the demonstrations | most of each step was model error, not intended motion |
+| 65% of commands hit our 1°-per-step safety limit | expected, with steps that large |
+| over 450 steps, the gripper command never went above 0.154 (it needs 0.65 to close) | the gripper prediction was as noisy as the joints |
+| the arm was fine for about 100 steps, then drifted | the error was there from the first step and kept adding up |
 
 ### 4.2 The fix
 
