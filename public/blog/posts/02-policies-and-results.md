@@ -170,8 +170,8 @@ That colour-sorting run had no early stopping. Validation loss was lowest at epo
 *Video 2: π0 sanding, successful trial (scene and wrist cameras on the left, 4× speed). On the right, each joint over the last 6 seconds: the dashed line is the position the policy asked for at each step, and the solid line is the position actually sent to the arm after the controller's speed limit. The gaps are where the control loop paused for a gripper command.*
 
 ![π0 picking up a cream, a blue and a brown block in turn and placing each in the dark tray](figures/part2/colour-sorting-success.mp4 "loop")
-![π0 placing a red packet in the dark tray, then failing to grasp a computer mouse several times](figures/part2/colour-sorting-failure.mp4 "loop")
-*Video 3: π0 colour sorting (scene camera, 4× speed). Left: picking up a cream, a blue and a brown block in turn and placing each in the dark tray. Right: placing a red packet, then failing to grasp a computer mouse several times.*
+![π0 placing a red packet in the dark tray, then failing to grasp an eyeglasses case several times](figures/part2/colour-sorting-failure.mp4 "loop")
+*Video 3: π0 colour sorting (scene camera, 4× speed). Left: picking up a cream, a blue and a brown block in turn and placing each in the dark tray. Right: placing a red packet, then failing to grasp an eyeglasses case several times.*
 
 ![Six colour-sorting trials playing side by side, each with different objects](figures/part2/colour-sorting-six-trials.mp4 "loop")
 *Video 4: The first minute of six colour-sorting trials with different objects and target trays (4× speed).*
