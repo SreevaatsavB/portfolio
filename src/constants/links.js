@@ -25,6 +25,6 @@ export const SOCIAL_LINKS = {
   // Publication links
 export const PUBLICATION_LINKS = {
   givCXR: "https://sreevaatsavb.github.io/GIV-CXR/",
-  layoffToReemploymentAcceptance: process.env.PUBLIC_URL + "/papers/layoff-to-reemployment-acceptance.pdf",
+  layoffToReemployment: process.env.PUBLIC_URL + "/papers/from-layoff-to-reemployment.pdf",
   videoSummarizationStudy: "https://dl.acm.org/doi/10.1145/3607540.3617139"
 }; 

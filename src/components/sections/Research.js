@@ -20,7 +20,7 @@ const Research = () => {
       authors: "Yayati Gupta, Sreevaatsav Bavana, Sudhira Chegu, Sujith Sai Kalakonda, Yash Mathur, Manmitha Polsani, and Sanatan Sukhija",
       conference: "International Conference on Computational Data and Social Networks, CSoNet 2025, Springer LNCS",
       status: "Accepted",
-      link: PUBLICATION_LINKS.layoffToReemploymentAcceptance
+      link: PUBLICATION_LINKS.layoffToReemployment
     },
     {
       id: 2,
